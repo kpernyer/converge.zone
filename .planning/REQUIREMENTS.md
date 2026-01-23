@@ -151,7 +151,7 @@ REQ-TRAIT-* --> REQ-V2-* (Traits before extraction)
 | REQ-TYPE-03 | Phase 3 | Pending |
 | REQ-TYPE-04 | Phase 3 | Pending |
 | REQ-TYPE-05 | Phase 6 | Pending |
-| REQ-TYPE-06 | Phase 2 | Pending |
+| REQ-TYPE-06 | Phase 2 | Complete |
 | REQ-TYPE-07 | Phase 3 | Pending |
 | REQ-TYPE-08 | Phase 3 | Pending |
 | REQ-TYPE-09 | Phase 7 | Pending |

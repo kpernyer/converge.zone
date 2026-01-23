@@ -13,7 +13,7 @@ Restore converge-core to its pure, portable, axiomatic foundation by establishin
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: CI Foundation** - Guardrails before code changes
-- [ ] **Phase 2: Dependency Cleanup** - Remove forbidden dependencies
+- [x] **Phase 2: Dependency Cleanup** - Remove forbidden dependencies
 - [ ] **Phase 3: Type Consolidation** - Organize core type vocabulary
 - [ ] **Phase 4: Gate Pattern** - Implement ProposalLifecycle abstraction
 - [ ] **Phase 5: Trait Definitions** - Define capability boundary traits
@@ -49,8 +49,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 02-01-PLAN.md - Create traits module with stub traits (Executor, Randomness, Fingerprint)
-- [ ] 02-02-PLAN.md - Replace forbidden dependencies and add test infrastructure
+- [x] 02-01-PLAN.md - Create traits module with stub traits (Executor, Randomness, Fingerprint)
+- [x] 02-02-PLAN.md - Replace forbidden dependencies and add test infrastructure
 
 ### Phase 3: Type Consolidation
 **Goal**: Core type vocabulary organized in types/ module with stable serialization
@@ -156,7 +156,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. CI Foundation | 1/1 | Complete | 2026-01-23 |
-| 2. Dependency Cleanup | 0/2 | Not started | - |
+| 2. Dependency Cleanup | 2/2 | Complete | 2026-01-23 |
 | 3. Type Consolidation | 0/2 | Not started | - |
 | 4. Gate Pattern | 0/2 | Not started | - |
 | 5. Trait Definitions | 0/2 | Not started | - |
