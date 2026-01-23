@@ -10,29 +10,29 @@ See: .planning/PROJECT.md (updated 2026-01-23)
 ## Current Position
 
 Phase: 2 of 8 (Dependency Cleanup)
-Plan: 1 of 5 in current phase (COMPLETE)
+Plan: 2 of 5 in current phase (COMPLETE)
 Status: In progress
-Last activity: 2026-01-23 - Completed 02-01-PLAN.md (capability boundary traits)
+Last activity: 2026-01-23 - Completed 02-02-PLAN.md (removed forbidden dependencies)
 
 Progress: [##--------] 25% (2/8 phases started)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 2
-- Average duration: 4 min
-- Total execution time: 0.13 hours
+- Total plans completed: 3
+- Average duration: 4.7 min
+- Total execution time: 0.23 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01-ci-foundation | 1 | 6 min | 6 min |
-| 02-dependency-cleanup | 1 | 2 min | 2 min |
+| 02-dependency-cleanup | 2 | 8 min | 4 min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (6 min), 02-01 (2 min)
-- Trend: Improving
+- Last 5 plans: 01-01 (6 min), 02-01 (2 min), 02-02 (6 min)
+- Trend: Stable
 
 *Updated after each plan completion*
 
@@ -51,6 +51,9 @@ Recent decisions affecting current work:
 - [Phase 1-01]: No continue-on-error in CI - enforcement is blocking
 - [Phase 2-01]: Generic parameters over associated types for trait flexibility
 - [Phase 2-01]: All capability boundary traits require Send + Sync bounds
+- [Phase 2-02]: FNV-1a stub for hashing - non-cryptographic but deterministic
+- [Phase 2-02]: Timestamp + pid + counter for ID generation without rand
+- [Phase 2-02]: exclude-dev in deny.toml - test tools can use rand/rayon internally
 
 ### Pending Todos
 
@@ -59,18 +62,18 @@ None.
 ### Blockers/Concerns
 
 - **Nested git repositories:** converge-core has separate .git from workspace. Task commits split between repos. Requires separate push operations.
-- **CI will fail:** Expected until remaining Phase 2 plans remove rayon, rand, sha2, hex dependencies
+- **RESOLVED: CI dependency check now passes** - cargo deny check bans succeeds after 02-02
 
 ## Session Continuity
 
-Last session: 2026-01-23 17:07
-Stopped at: Completed 02-01-PLAN.md
+Last session: 2026-01-23 17:17
+Stopped at: Completed 02-02-PLAN.md
 Resume file: None
 
 ---
 
 ## Next Steps
 
-1. Phase 2 Plan 1 complete - traits established
-2. Continue with Phase 2 Plans 2-5 to remove forbidden dependencies
-3. After Phase 2 complete, CI should pass (cargo deny check succeeds)
+1. Phase 2 Plans 1-2 complete - traits established, dependencies removed
+2. Continue with Phase 2 Plans 3-5 if any exist, or proceed to Phase 3
+3. CI dependency checks now pass (cargo deny check bans succeeds)
