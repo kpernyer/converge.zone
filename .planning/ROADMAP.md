@@ -15,7 +15,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 1: CI Foundation** - Guardrails before code changes
 - [x] **Phase 2: Dependency Cleanup** - Remove forbidden dependencies
 - [x] **Phase 3: Type Consolidation** - Organize core type vocabulary
-- [ ] **Phase 4: Gate Pattern** - Implement ProposalLifecycle abstraction
+- [x] **Phase 4: Gate Pattern** - Implement ProposalLifecycle abstraction
 - [ ] **Phase 5: Trait Definitions** - Define capability boundary traits
 - [ ] **Phase 6: Testing Infrastructure** - Property-based and snapshot tests
 - [ ] **Phase 7: Documentation** - BOUNDARY.md, module docs
@@ -79,11 +79,11 @@ Plans:
   4. Budget types exist for guaranteed termination
   5. StopReason enumeration covers all termination reasons
   6. Kernel boundary types define constitutional interfaces
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 04-01: Implement ProposalLifecycle and PromotionGate
-- [ ] 04-02: Implement kernel boundary types and budgets
+- [x] 04-01-PLAN.md - Create gates/ module with ProposalLifecycle trait, PromotionGate, ValidationReport
+- [x] 04-02-PLAN.md - Add Budget newtypes, StopReason enum, kernel boundary formalization
 
 ### Phase 5: Trait Definitions
 **Goal**: All capability boundary traits defined in traits/ module with clear ownership
@@ -158,7 +158,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | 1. CI Foundation | 1/1 | Complete | 2026-01-23 |
 | 2. Dependency Cleanup | 2/2 | Complete | 2026-01-23 |
 | 3. Type Consolidation | 2/2 | Complete | 2026-01-23 |
-| 4. Gate Pattern | 0/2 | Not started | - |
+| 4. Gate Pattern | 2/2 | Complete | 2026-01-23 |
 | 5. Trait Definitions | 0/2 | Not started | - |
 | 6. Testing Infrastructure | 0/2 | Not started | - |
 | 7. Documentation | 0/2 | Not started | - |
