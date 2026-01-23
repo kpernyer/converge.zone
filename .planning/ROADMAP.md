@@ -62,11 +62,11 @@ Plans:
   3. State machines use enums (invalid states unrepresentable)
   4. Builder patterns exist for complex type construction
   5. All validation functions are pure (no I/O, no side effects)
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 03-01: Organize types/ module structure
-- [ ] 03-02: Implement error types and builders
+- [ ] 03-01-PLAN.md - Create types/ module with ID types, Observation, type-state Proposal, private-constructor Fact
+- [ ] 03-02-PLAN.md - Add Frame, Tension, Intent builders, Context, corrections, error consolidation
 
 ### Phase 4: Gate Pattern
 **Goal**: Generic ProposalLifecycle<I, P, V, F> abstraction enforces "agents suggest, engine decides"
@@ -157,7 +157,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 |-------|----------------|--------|-----------|
 | 1. CI Foundation | 1/1 | Complete | 2026-01-23 |
 | 2. Dependency Cleanup | 2/2 | Complete | 2026-01-23 |
-| 3. Type Consolidation | 0/2 | Not started | - |
+| 3. Type Consolidation | 0/2 | Planned | - |
 | 4. Gate Pattern | 0/2 | Not started | - |
 | 5. Trait Definitions | 0/2 | Not started | - |
 | 6. Testing Infrastructure | 0/2 | Not started | - |
