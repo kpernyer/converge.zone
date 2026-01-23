@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+repo_root="$(git rev-parse --show-toplevel)"
+cd "$repo_root"
+
+if ! command -v just >/dev/null 2>&1; then
+  echo "❌ 'just' is not installed. Install it to run pre-push checks."
+  exit 1
+fi
+
+echo "🚦 Running repo pre-push checks via just..."
+just pre-push

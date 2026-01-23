@@ -1,0 +1,1 @@
+/usr/bin/cc -O3 -DNDEBUG -arch arm64 -mmacosx-version-min=10.15 -dynamiclib -Wl,-headerpad_max_install_names -o ../../../lib/librectlu.dylib -install_name @rpath/librectlu.dylib CMakeFiles/librectlu.dir/scip/bitencode.c.o

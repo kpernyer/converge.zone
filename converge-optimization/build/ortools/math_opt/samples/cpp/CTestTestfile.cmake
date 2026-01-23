@@ -1,0 +1,20 @@
+# CMake generated Testfile for 
+# Source directory: /Users/kpernyer/repo/converge.zone/converge-optimization/ortools/math_opt/samples/cpp
+# Build directory: /Users/kpernyer/repo/converge.zone/converge-optimization/build/ortools/math_opt/samples/cpp
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
+add_test([=[cxx_math_opt_cocktail_hour]=] "/Users/kpernyer/repo/converge.zone/converge-optimization/build/bin/cocktail_hour")
+set_tests_properties([=[cxx_math_opt_cocktail_hour]=] PROPERTIES  _BACKTRACE_TRIPLES "/Users/kpernyer/repo/converge.zone/converge-optimization/cmake/cpp.cmake;927;add_test;/Users/kpernyer/repo/converge.zone/converge-optimization/ortools/math_opt/samples/cpp/CMakeLists.txt;37;add_cxx_sample;/Users/kpernyer/repo/converge.zone/converge-optimization/ortools/math_opt/samples/cpp/CMakeLists.txt;0;")
+add_test([=[cxx_math_opt_cutting_stock]=] "/Users/kpernyer/repo/converge.zone/converge-optimization/build/bin/cutting_stock")
+set_tests_properties([=[cxx_math_opt_cutting_stock]=] PROPERTIES  _BACKTRACE_TRIPLES "/Users/kpernyer/repo/converge.zone/converge-optimization/cmake/cpp.cmake;927;add_test;/Users/kpernyer/repo/converge.zone/converge-optimization/ortools/math_opt/samples/cpp/CMakeLists.txt;37;add_cxx_sample;/Users/kpernyer/repo/converge.zone/converge-optimization/ortools/math_opt/samples/cpp/CMakeLists.txt;0;")
+add_test([=[cxx_math_opt_facility_lp_benders]=] "/Users/kpernyer/repo/converge.zone/converge-optimization/build/bin/facility_lp_benders")
+set_tests_properties([=[cxx_math_opt_facility_lp_benders]=] PROPERTIES  _BACKTRACE_TRIPLES "/Users/kpernyer/repo/converge.zone/converge-optimization/cmake/cpp.cmake;927;add_test;/Users/kpernyer/repo/converge.zone/converge-optimization/ortools/math_opt/samples/cpp/CMakeLists.txt;37;add_cxx_sample;/Users/kpernyer/repo/converge.zone/converge-optimization/ortools/math_opt/samples/cpp/CMakeLists.txt;0;")
+add_test([=[cxx_math_opt_graph_coloring]=] "/Users/kpernyer/repo/converge.zone/converge-optimization/build/bin/graph_coloring")
+set_tests_properties([=[cxx_math_opt_graph_coloring]=] PROPERTIES  _BACKTRACE_TRIPLES "/Users/kpernyer/repo/converge.zone/converge-optimization/cmake/cpp.cmake;927;add_test;/Users/kpernyer/repo/converge.zone/converge-optimization/ortools/math_opt/samples/cpp/CMakeLists.txt;37;add_cxx_sample;/Users/kpernyer/repo/converge.zone/converge-optimization/ortools/math_opt/samples/cpp/CMakeLists.txt;0;")
+add_test([=[cxx_math_opt_lagrangian_relaxation]=] "/Users/kpernyer/repo/converge.zone/converge-optimization/build/bin/lagrangian_relaxation")
+set_tests_properties([=[cxx_math_opt_lagrangian_relaxation]=] PROPERTIES  _BACKTRACE_TRIPLES "/Users/kpernyer/repo/converge.zone/converge-optimization/cmake/cpp.cmake;927;add_test;/Users/kpernyer/repo/converge.zone/converge-optimization/ortools/math_opt/samples/cpp/CMakeLists.txt;37;add_cxx_sample;/Users/kpernyer/repo/converge.zone/converge-optimization/ortools/math_opt/samples/cpp/CMakeLists.txt;0;")
+add_test([=[cxx_math_opt_mathopt_info]=] "/Users/kpernyer/repo/converge.zone/converge-optimization/build/bin/mathopt_info")
+set_tests_properties([=[cxx_math_opt_mathopt_info]=] PROPERTIES  _BACKTRACE_TRIPLES "/Users/kpernyer/repo/converge.zone/converge-optimization/cmake/cpp.cmake;927;add_test;/Users/kpernyer/repo/converge.zone/converge-optimization/ortools/math_opt/samples/cpp/CMakeLists.txt;37;add_cxx_sample;/Users/kpernyer/repo/converge.zone/converge-optimization/ortools/math_opt/samples/cpp/CMakeLists.txt;0;")
+add_test([=[cxx_math_opt_time_indexed_scheduling]=] "/Users/kpernyer/repo/converge.zone/converge-optimization/build/bin/time_indexed_scheduling")
+set_tests_properties([=[cxx_math_opt_time_indexed_scheduling]=] PROPERTIES  _BACKTRACE_TRIPLES "/Users/kpernyer/repo/converge.zone/converge-optimization/cmake/cpp.cmake;927;add_test;/Users/kpernyer/repo/converge.zone/converge-optimization/ortools/math_opt/samples/cpp/CMakeLists.txt;37;add_cxx_sample;/Users/kpernyer/repo/converge.zone/converge-optimization/ortools/math_opt/samples/cpp/CMakeLists.txt;0;")

@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/highs-subbuild/CMakeFiles/highs-populate"
+		},
+		{
+			"file" : "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/highs-subbuild/CMakeFiles/highs-populate.rule"
+		},
+		{
+			"file" : "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/highs-subbuild/CMakeFiles/highs-populate-complete.rule"
+		},
+		{
+			"file" : "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/highs-subbuild/highs-populate-prefix/src/highs-populate-stamp/highs-populate-build.rule"
+		},
+		{
+			"file" : "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/highs-subbuild/highs-populate-prefix/src/highs-populate-stamp/highs-populate-configure.rule"
+		},
+		{
+			"file" : "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/highs-subbuild/highs-populate-prefix/src/highs-populate-stamp/highs-populate-download.rule"
+		},
+		{
+			"file" : "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/highs-subbuild/highs-populate-prefix/src/highs-populate-stamp/highs-populate-install.rule"
+		},
+		{
+			"file" : "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/highs-subbuild/highs-populate-prefix/src/highs-populate-stamp/highs-populate-mkdir.rule"
+		},
+		{
+			"file" : "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/highs-subbuild/highs-populate-prefix/src/highs-populate-stamp/highs-populate-patch_disconnected.rule"
+		},
+		{
+			"file" : "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/highs-subbuild/highs-populate-prefix/src/highs-populate-stamp/highs-populate-test.rule"
+		},
+		{
+			"file" : "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/highs-subbuild/highs-populate-prefix/src/highs-populate-stamp/highs-populate-update_disconnected.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"highs-populate"
+		],
+		"name" : "highs-populate"
+	}
+}

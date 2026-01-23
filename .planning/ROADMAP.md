@@ -14,7 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: CI Foundation** - Guardrails before code changes
 - [x] **Phase 2: Dependency Cleanup** - Remove forbidden dependencies
-- [ ] **Phase 3: Type Consolidation** - Organize core type vocabulary
+- [x] **Phase 3: Type Consolidation** - Organize core type vocabulary
 - [ ] **Phase 4: Gate Pattern** - Implement ProposalLifecycle abstraction
 - [ ] **Phase 5: Trait Definitions** - Define capability boundary traits
 - [ ] **Phase 6: Testing Infrastructure** - Property-based and snapshot tests
@@ -65,8 +65,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 03-01-PLAN.md - Create types/ module with ID types, Observation, type-state Proposal, private-constructor Fact
-- [ ] 03-02-PLAN.md - Add Frame, Tension, Intent builders, Context, corrections, error consolidation
+- [x] 03-01-PLAN.md - Create types/ module with ID types, Observation, type-state Proposal, private-constructor Fact
+- [x] 03-02-PLAN.md - Add Frame, Tension, Intent builders, Context, corrections, error consolidation
 
 ### Phase 4: Gate Pattern
 **Goal**: Generic ProposalLifecycle<I, P, V, F> abstraction enforces "agents suggest, engine decides"
@@ -157,7 +157,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 |-------|----------------|--------|-----------|
 | 1. CI Foundation | 1/1 | Complete | 2026-01-23 |
 | 2. Dependency Cleanup | 2/2 | Complete | 2026-01-23 |
-| 3. Type Consolidation | 0/2 | Planned | - |
+| 3. Type Consolidation | 2/2 | Complete | 2026-01-23 |
 | 4. Gate Pattern | 0/2 | Not started | - |
 | 5. Trait Definitions | 0/2 | Not started | - |
 | 6. Testing Infrastructure | 0/2 | Not started | - |

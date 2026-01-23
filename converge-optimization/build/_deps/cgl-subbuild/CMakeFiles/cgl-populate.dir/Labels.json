@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/cgl-subbuild/CMakeFiles/cgl-populate"
+		},
+		{
+			"file" : "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/cgl-subbuild/CMakeFiles/cgl-populate.rule"
+		},
+		{
+			"file" : "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/cgl-subbuild/CMakeFiles/cgl-populate-complete.rule"
+		},
+		{
+			"file" : "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/cgl-subbuild/cgl-populate-prefix/src/cgl-populate-stamp/cgl-populate-build.rule"
+		},
+		{
+			"file" : "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/cgl-subbuild/cgl-populate-prefix/src/cgl-populate-stamp/cgl-populate-configure.rule"
+		},
+		{
+			"file" : "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/cgl-subbuild/cgl-populate-prefix/src/cgl-populate-stamp/cgl-populate-download.rule"
+		},
+		{
+			"file" : "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/cgl-subbuild/cgl-populate-prefix/src/cgl-populate-stamp/cgl-populate-install.rule"
+		},
+		{
+			"file" : "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/cgl-subbuild/cgl-populate-prefix/src/cgl-populate-stamp/cgl-populate-mkdir.rule"
+		},
+		{
+			"file" : "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/cgl-subbuild/cgl-populate-prefix/src/cgl-populate-stamp/cgl-populate-patch_disconnected.rule"
+		},
+		{
+			"file" : "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/cgl-subbuild/cgl-populate-prefix/src/cgl-populate-stamp/cgl-populate-test.rule"
+		},
+		{
+			"file" : "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/cgl-subbuild/cgl-populate-prefix/src/cgl-populate-stamp/cgl-populate-update_disconnected.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"cgl-populate"
+		],
+		"name" : "cgl-populate"
+	}
+}

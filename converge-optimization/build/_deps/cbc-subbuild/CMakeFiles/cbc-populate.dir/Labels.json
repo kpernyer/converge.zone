@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/cbc-subbuild/CMakeFiles/cbc-populate"
+		},
+		{
+			"file" : "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/cbc-subbuild/CMakeFiles/cbc-populate.rule"
+		},
+		{
+			"file" : "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/cbc-subbuild/CMakeFiles/cbc-populate-complete.rule"
+		},
+		{
+			"file" : "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/cbc-subbuild/cbc-populate-prefix/src/cbc-populate-stamp/cbc-populate-build.rule"
+		},
+		{
+			"file" : "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/cbc-subbuild/cbc-populate-prefix/src/cbc-populate-stamp/cbc-populate-configure.rule"
+		},
+		{
+			"file" : "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/cbc-subbuild/cbc-populate-prefix/src/cbc-populate-stamp/cbc-populate-download.rule"
+		},
+		{
+			"file" : "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/cbc-subbuild/cbc-populate-prefix/src/cbc-populate-stamp/cbc-populate-install.rule"
+		},
+		{
+			"file" : "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/cbc-subbuild/cbc-populate-prefix/src/cbc-populate-stamp/cbc-populate-mkdir.rule"
+		},
+		{
+			"file" : "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/cbc-subbuild/cbc-populate-prefix/src/cbc-populate-stamp/cbc-populate-patch_disconnected.rule"
+		},
+		{
+			"file" : "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/cbc-subbuild/cbc-populate-prefix/src/cbc-populate-stamp/cbc-populate-test.rule"
+		},
+		{
+			"file" : "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/cbc-subbuild/cbc-populate-prefix/src/cbc-populate-stamp/cbc-populate-update_disconnected.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"cbc-populate"
+		],
+		"name" : "cbc-populate"
+	}
+}

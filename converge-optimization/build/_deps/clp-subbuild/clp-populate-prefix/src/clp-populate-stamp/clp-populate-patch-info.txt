@@ -1,0 +1,6 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The update step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+command=git;apply;--ignore-whitespace;/Users/kpernyer/repo/converge.zone/converge-optimization/cmake/dependencies/../../patches/clp-1.17.patch
+work_dir=/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/clp-src

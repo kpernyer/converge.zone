@@ -1,0 +1,15 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=git
+command=/opt/homebrew/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/cgl-subbuild/cgl-populate-prefix/tmp/cgl-populate-gitclone.cmake
+source_dir=/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/cgl-src
+work_dir=/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps
+repository=https://github.com/Mizux/Cgl.git
+remote=origin
+init_submodules=TRUE
+recurse_submodules=--recursive
+submodules=
+CMP0097=NEW
+      

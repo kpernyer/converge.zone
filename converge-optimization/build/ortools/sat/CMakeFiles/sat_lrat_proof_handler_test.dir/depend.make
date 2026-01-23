@@ -1,0 +1,2 @@
+# Empty dependencies file for sat_lrat_proof_handler_test.
+# This may be replaced when dependencies are built.

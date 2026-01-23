@@ -1,0 +1,33 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
+# The set of languages for which implicit dependencies are needed:
+set(CMAKE_DEPENDS_LANGUAGES
+  )
+
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/soplex-src/src/soplex/didxset.cpp" "_deps/soplex-build/src/CMakeFiles/libsoplex.dir/soplex/didxset.cpp.o" "gcc" "_deps/soplex-build/src/CMakeFiles/libsoplex.dir/soplex/didxset.cpp.o.d"
+  "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/soplex-src/src/soplex/idxset.cpp" "_deps/soplex-build/src/CMakeFiles/libsoplex.dir/soplex/idxset.cpp.o" "gcc" "_deps/soplex-build/src/CMakeFiles/libsoplex.dir/soplex/idxset.cpp.o.d"
+  "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/soplex-src/src/soplex/mpsinput.cpp" "_deps/soplex-build/src/CMakeFiles/libsoplex.dir/soplex/mpsinput.cpp.o" "gcc" "_deps/soplex-build/src/CMakeFiles/libsoplex.dir/soplex/mpsinput.cpp.o.d"
+  "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/soplex-src/src/soplex/nameset.cpp" "_deps/soplex-build/src/CMakeFiles/libsoplex.dir/soplex/nameset.cpp.o" "gcc" "_deps/soplex-build/src/CMakeFiles/libsoplex.dir/soplex/nameset.cpp.o.d"
+  "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/soplex-src/src/soplex/spxdefines.cpp" "_deps/soplex-build/src/CMakeFiles/libsoplex.dir/soplex/spxdefines.cpp.o" "gcc" "_deps/soplex-build/src/CMakeFiles/libsoplex.dir/soplex/spxdefines.cpp.o.d"
+  "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/soplex-src/src/soplex/spxgithash.cpp" "_deps/soplex-build/src/CMakeFiles/libsoplex.dir/soplex/spxgithash.cpp.o" "gcc" "_deps/soplex-build/src/CMakeFiles/libsoplex.dir/soplex/spxgithash.cpp.o.d"
+  "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/soplex-src/src/soplex/spxid.cpp" "_deps/soplex-build/src/CMakeFiles/libsoplex.dir/soplex/spxid.cpp.o" "gcc" "_deps/soplex-build/src/CMakeFiles/libsoplex.dir/soplex/spxid.cpp.o.d"
+  "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/soplex-src/src/soplex/spxout.cpp" "_deps/soplex-build/src/CMakeFiles/libsoplex.dir/soplex/spxout.cpp.o" "gcc" "_deps/soplex-build/src/CMakeFiles/libsoplex.dir/soplex/spxout.cpp.o.d"
+  "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/soplex-src/src/soplex/usertimer.cpp" "_deps/soplex-build/src/CMakeFiles/libsoplex.dir/soplex/usertimer.cpp.o" "gcc" "_deps/soplex-build/src/CMakeFiles/libsoplex.dir/soplex/usertimer.cpp.o.d"
+  "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/soplex-src/src/soplex/wallclocktimer.cpp" "_deps/soplex-build/src/CMakeFiles/libsoplex.dir/soplex/wallclocktimer.cpp.o" "gcc" "_deps/soplex-build/src/CMakeFiles/libsoplex.dir/soplex/wallclocktimer.cpp.o.d"
+  "/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/soplex-src/src/soplex_interface.cpp" "_deps/soplex-build/src/CMakeFiles/libsoplex.dir/soplex_interface.cpp.o" "gcc" "_deps/soplex-build/src/CMakeFiles/libsoplex.dir/soplex_interface.cpp.o.d"
+  )
+
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
+  )
+
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_FORWARD_LINKED_INFO_FILES
+  )
+
+# Fortran module output directory.
+set(CMAKE_Fortran_TARGET_MODULE_DIR "")

@@ -1,0 +1,2 @@
+# Empty dependencies file for ortools_math_opt_solvers.
+# This may be replaced when dependencies are built.

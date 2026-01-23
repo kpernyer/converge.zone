@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../lib/libmath_opt_infeasible_subsystem_tests.a CMakeFiles/math_opt_infeasible_subsystem_tests.dir/infeasible_subsystem_tests.cc.o
+/usr/bin/ranlib ../../../lib/libmath_opt_infeasible_subsystem_tests.a

@@ -1,0 +1,291 @@
+cargo:rerun-if-changed=build.rs
+cargo:rerun-if-changed=wrapper.h
+cargo:rerun-if-changed=wrapper.cc
+OUT_DIR = Some(/Users/kpernyer/repo/converge.zone/converge-optimization/target/debug/build/ortools-sys-c0cdb99d1b8d1ab5/out)
+OPT_LEVEL = Some(0)
+TARGET = Some(aarch64-apple-darwin)
+CARGO_ENCODED_RUSTFLAGS = Some()
+HOST = Some(aarch64-apple-darwin)
+cargo:rerun-if-env-changed=CXX_aarch64-apple-darwin
+CXX_aarch64-apple-darwin = None
+cargo:rerun-if-env-changed=CXX_aarch64_apple_darwin
+CXX_aarch64_apple_darwin = None
+cargo:rerun-if-env-changed=HOST_CXX
+HOST_CXX = None
+cargo:rerun-if-env-changed=CXX
+CXX = None
+cargo:rerun-if-env-changed=CC_ENABLE_DEBUG_OUTPUT
+RUSTC_WRAPPER = None
+cargo:rerun-if-env-changed=CRATE_CC_NO_DEFAULTS
+CRATE_CC_NO_DEFAULTS = None
+DEBUG = Some(true)
+cargo:rerun-if-env-changed=MACOSX_DEPLOYMENT_TARGET
+MACOSX_DEPLOYMENT_TARGET = None
+cargo:rerun-if-env-changed=CXXFLAGS
+CXXFLAGS = None
+cargo:rerun-if-env-changed=HOST_CXXFLAGS
+HOST_CXXFLAGS = None
+cargo:rerun-if-env-changed=CXXFLAGS_aarch64_apple_darwin
+CXXFLAGS_aarch64_apple_darwin = None
+cargo:rerun-if-env-changed=CXXFLAGS_aarch64-apple-darwin
+CXXFLAGS_aarch64-apple-darwin = None
+OUT_DIR = Some(/Users/kpernyer/repo/converge.zone/converge-optimization/target/debug/build/ortools-sys-c0cdb99d1b8d1ab5/out)
+cargo:rerun-if-env-changed=CC_ENABLE_DEBUG_OUTPUT
+cargo:rerun-if-env-changed=CRATE_CC_NO_DEFAULTS
+CRATE_CC_NO_DEFAULTS = None
+TARGET = Some(aarch64-apple-darwin)
+cargo:rerun-if-env-changed=MACOSX_DEPLOYMENT_TARGET
+MACOSX_DEPLOYMENT_TARGET = None
+HOST = Some(aarch64-apple-darwin)
+cargo:rerun-if-env-changed=CXXFLAGS
+CXXFLAGS = None
+cargo:rerun-if-env-changed=HOST_CXXFLAGS
+HOST_CXXFLAGS = None
+cargo:rerun-if-env-changed=CXXFLAGS_aarch64_apple_darwin
+CXXFLAGS_aarch64_apple_darwin = None
+cargo:rerun-if-env-changed=CXXFLAGS_aarch64-apple-darwin
+CXXFLAGS_aarch64-apple-darwin = None
+OUT_DIR = Some(/Users/kpernyer/repo/converge.zone/converge-optimization/target/debug/build/ortools-sys-c0cdb99d1b8d1ab5/out)
+cargo:rerun-if-env-changed=CC_ENABLE_DEBUG_OUTPUT
+cargo:rerun-if-env-changed=CRATE_CC_NO_DEFAULTS
+CRATE_CC_NO_DEFAULTS = None
+TARGET = Some(aarch64-apple-darwin)
+cargo:rerun-if-env-changed=MACOSX_DEPLOYMENT_TARGET
+MACOSX_DEPLOYMENT_TARGET = None
+HOST = Some(aarch64-apple-darwin)
+cargo:rerun-if-env-changed=CXXFLAGS
+CXXFLAGS = None
+cargo:rerun-if-env-changed=HOST_CXXFLAGS
+HOST_CXXFLAGS = None
+cargo:rerun-if-env-changed=CXXFLAGS_aarch64_apple_darwin
+CXXFLAGS_aarch64_apple_darwin = None
+cargo:rerun-if-env-changed=CXXFLAGS_aarch64-apple-darwin
+CXXFLAGS_aarch64-apple-darwin = None
+cargo:warning=In file included from wrapper.cc:11:
+cargo:warning=In file included from /Users/kpernyer/repo/converge.zone/converge-optimization/ortools/sat/cp_model.h:53:
+cargo:warning=In file included from /Users/kpernyer/repo/converge.zone/converge-optimization/build/ortools/sat/cp_model.pb.h:20:
+cargo:warning=In file included from /Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/protobuf-src/src/google/protobuf/io/coded_stream.h:111:
+cargo:warning=In file included from /Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/absl-src/absl/log/absl_check.h:38:
+cargo:warning=In file included from /Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/absl-src/absl/log/internal/check_impl.h:19:
+cargo:warning=/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/absl-src/absl/log/internal/check_op.h:477:43: warning: comparison of integers of different signs: 'const unsigned long long' and 'const int' [-Wsign-compare]
+cargo:warning=  477 | ABSL_LOG_INTERNAL_CHECK_OP_IMPL(Check_NE, !=)
+cargo:warning=      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+cargo:warning=/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/absl-src/absl/log/internal/check_op.h:466:33: note: expanded from macro 'ABSL_LOG_INTERNAL_CHECK_OP_IMPL'
+cargo:warning=  466 |     return ABSL_PREDICT_TRUE(v1 op v2)                                     \
+cargo:warning=      |                              ~~ ^  ~~
+cargo:warning=/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/absl-src/absl/base/optimization.h:192:58: note: expanded from macro 'ABSL_PREDICT_TRUE'
+cargo:warning=  192 | #define ABSL_PREDICT_TRUE(x) (__builtin_expect(false || (x), true))
+cargo:warning=      |                                                          ^
+cargo:warning=/Users/kpernyer/repo/converge.zone/converge-optimization/ortools/util/bitset.h:97:3: note: in instantiation of function template specialization 'absl::log_internal::Check_NEImpl<unsigned long long, int>' requested here
+cargo:warning=   97 |   DCHECK_NE(n, 0);
+cargo:warning=      |   ^
+cargo:warning=/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/absl-src/absl/log/check.h:144:3: note: expanded from macro 'DCHECK_NE'
+cargo:warning=  144 |   ABSL_LOG_INTERNAL_DCHECK_NE_IMPL((val1), #val1, (val2), #val2)
+cargo:warning=      |   ^
+cargo:warning=/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/absl-src/absl/log/internal/check_impl.h:75:3: note: expanded from macro 'ABSL_LOG_INTERNAL_DCHECK_NE_IMPL'
+cargo:warning=   75 |   ABSL_LOG_INTERNAL_CHECK_NE_IMPL(val1, val1_text, val2, val2_text)
+cargo:warning=      |   ^
+cargo:warning=/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/absl-src/absl/log/internal/check_impl.h:50:3: note: expanded from macro 'ABSL_LOG_INTERNAL_CHECK_NE_IMPL'
+cargo:warning=   50 |   ABSL_LOG_INTERNAL_CHECK_OP(Check_NE, !=, val1, val1_text, val2, val2_text)
+cargo:warning=      |   ^
+cargo:warning=/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/absl-src/absl/log/internal/check_op.h:69:51: note: expanded from macro 'ABSL_LOG_INTERNAL_CHECK_OP'
+cargo:warning=   69 |          [[maybe_unused]] = ::absl::log_internal::name##Impl(                  \
+cargo:warning=      |                                                   ^
+cargo:warning=<scratch space>:200:1: note: expanded from here
+cargo:warning=  200 | Check_NEImpl
+cargo:warning=      | ^
+cargo:warning=In file included from wrapper.cc:11:
+cargo:warning=In file included from /Users/kpernyer/repo/converge.zone/converge-optimization/ortools/sat/cp_model.h:53:
+cargo:warning=In file included from /Users/kpernyer/repo/converge.zone/converge-optimization/build/ortools/sat/cp_model.pb.h:20:
+cargo:warning=In file included from /Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/protobuf-src/src/google/protobuf/io/coded_stream.h:111:
+cargo:warning=In file included from /Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/absl-src/absl/log/absl_check.h:38:
+cargo:warning=In file included from /Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/absl-src/absl/log/internal/check_impl.h:19:
+cargo:warning=/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/absl-src/absl/log/internal/check_op.h:477:43: warning: comparison of integers of different signs: 'const unsigned int' and 'const int' [-Wsign-compare]
+cargo:warning=  477 | ABSL_LOG_INTERNAL_CHECK_OP_IMPL(Check_NE, !=)
+cargo:warning=      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+cargo:warning=/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/absl-src/absl/log/internal/check_op.h:466:33: note: expanded from macro 'ABSL_LOG_INTERNAL_CHECK_OP_IMPL'
+cargo:warning=  466 |     return ABSL_PREDICT_TRUE(v1 op v2)                                     \
+cargo:warning=      |                              ~~ ^  ~~
+cargo:warning=/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/absl-src/absl/base/optimization.h:192:58: note: expanded from macro 'ABSL_PREDICT_TRUE'
+cargo:warning=  192 | #define ABSL_PREDICT_TRUE(x) (__builtin_expect(false || (x), true))
+cargo:warning=      |                                                          ^
+cargo:warning=/Users/kpernyer/repo/converge.zone/converge-optimization/ortools/util/bitset.h:157:3: note: in instantiation of function template specialization 'absl::log_internal::Check_NEImpl<unsigned int, int>' requested here
+cargo:warning=  157 |   DCHECK_NE(n, 0);
+cargo:warning=      |   ^
+cargo:warning=/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/absl-src/absl/log/check.h:144:3: note: expanded from macro 'DCHECK_NE'
+cargo:warning=  144 |   ABSL_LOG_INTERNAL_DCHECK_NE_IMPL((val1), #val1, (val2), #val2)
+cargo:warning=      |   ^
+cargo:warning=/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/absl-src/absl/log/internal/check_impl.h:75:3: note: expanded from macro 'ABSL_LOG_INTERNAL_DCHECK_NE_IMPL'
+cargo:warning=   75 |   ABSL_LOG_INTERNAL_CHECK_NE_IMPL(val1, val1_text, val2, val2_text)
+cargo:warning=      |   ^
+cargo:warning=/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/absl-src/absl/log/internal/check_impl.h:50:3: note: expanded from macro 'ABSL_LOG_INTERNAL_CHECK_NE_IMPL'
+cargo:warning=   50 |   ABSL_LOG_INTERNAL_CHECK_OP(Check_NE, !=, val1, val1_text, val2, val2_text)
+cargo:warning=      |   ^
+cargo:warning=/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/absl-src/absl/log/internal/check_op.h:69:51: note: expanded from macro 'ABSL_LOG_INTERNAL_CHECK_OP'
+cargo:warning=   69 |          [[maybe_unused]] = ::absl::log_internal::name##Impl(                  \
+cargo:warning=      |                                                   ^
+cargo:warning=<scratch space>:216:1: note: expanded from here
+cargo:warning=  216 | Check_NEImpl
+cargo:warning=      | ^
+cargo:warning=In file included from wrapper.cc:11:
+cargo:warning=In file included from /Users/kpernyer/repo/converge.zone/converge-optimization/ortools/sat/cp_model.h:53:
+cargo:warning=In file included from /Users/kpernyer/repo/converge.zone/converge-optimization/build/ortools/sat/cp_model.pb.h:20:
+cargo:warning=In file included from /Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/protobuf-src/src/google/protobuf/io/coded_stream.h:111:
+cargo:warning=In file included from /Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/absl-src/absl/log/absl_check.h:38:
+cargo:warning=In file included from /Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/absl-src/absl/log/internal/check_impl.h:19:
+cargo:warning=/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/absl-src/absl/log/internal/check_op.h:478:43: warning: comparison of integers of different signs: 'const unsigned long long' and 'const int' [-Wsign-compare]
+cargo:warning=  478 | ABSL_LOG_INTERNAL_CHECK_OP_IMPL(Check_LE, <=)
+cargo:warning=      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+cargo:warning=/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/absl-src/absl/log/internal/check_op.h:466:33: note: expanded from macro 'ABSL_LOG_INTERNAL_CHECK_OP_IMPL'
+cargo:warning=  466 |     return ABSL_PREDICT_TRUE(v1 op v2)                                     \
+cargo:warning=      |                              ~~ ^  ~~
+cargo:warning=/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/absl-src/absl/base/optimization.h:192:58: note: expanded from macro 'ABSL_PREDICT_TRUE'
+cargo:warning=  192 | #define ABSL_PREDICT_TRUE(x) (__builtin_expect(false || (x), true))
+cargo:warning=      |                                                          ^
+cargo:warning=/Users/kpernyer/repo/converge.zone/converge-optimization/ortools/util/bitset.h:289:3: note: in instantiation of function template specialization 'absl::log_internal::Check_LEImpl<unsigned long long, int>' requested here
+cargo:warning=  289 |   DCHECK_LE(s, 63);
+cargo:warning=      |   ^
+cargo:warning=/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/absl-src/absl/log/check.h:146:3: note: expanded from macro 'DCHECK_LE'
+cargo:warning=  146 |   ABSL_LOG_INTERNAL_DCHECK_LE_IMPL((val1), #val1, (val2), #val2)
+cargo:warning=      |   ^
+cargo:warning=/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/absl-src/absl/log/internal/check_impl.h:77:3: note: expanded from macro 'ABSL_LOG_INTERNAL_DCHECK_LE_IMPL'
+cargo:warning=   77 |   ABSL_LOG_INTERNAL_CHECK_LE_IMPL(val1, val1_text, val2, val2_text)
+cargo:warning=      |   ^
+cargo:warning=/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/absl-src/absl/log/internal/check_impl.h:52:3: note: expanded from macro 'ABSL_LOG_INTERNAL_CHECK_LE_IMPL'
+cargo:warning=   52 |   ABSL_LOG_INTERNAL_CHECK_OP(Check_LE, <=, val1, val1_text, val2, val2_text)
+cargo:warning=      |   ^
+cargo:warning=/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/absl-src/absl/log/internal/check_op.h:69:51: note: expanded from macro 'ABSL_LOG_INTERNAL_CHECK_OP'
+cargo:warning=   69 |          [[maybe_unused]] = ::absl::log_internal::name##Impl(                  \
+cargo:warning=      |                                                   ^
+cargo:warning=<scratch space>:232:1: note: expanded from here
+cargo:warning=  232 | Check_LEImpl
+cargo:warning=      | ^
+cargo:warning=In file included from wrapper.cc:11:
+cargo:warning=In file included from /Users/kpernyer/repo/converge.zone/converge-optimization/ortools/sat/cp_model.h:53:
+cargo:warning=In file included from /Users/kpernyer/repo/converge.zone/converge-optimization/build/ortools/sat/cp_model.pb.h:20:
+cargo:warning=In file included from /Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/protobuf-src/src/google/protobuf/io/coded_stream.h:111:
+cargo:warning=In file included from /Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/absl-src/absl/log/absl_check.h:38:
+cargo:warning=In file included from /Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/absl-src/absl/log/internal/check_impl.h:19:
+cargo:warning=/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/absl-src/absl/log/internal/check_op.h:478:43: warning: comparison of integers of different signs: 'const unsigned int' and 'const int' [-Wsign-compare]
+cargo:warning=  478 | ABSL_LOG_INTERNAL_CHECK_OP_IMPL(Check_LE, <=)
+cargo:warning=      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+cargo:warning=/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/absl-src/absl/log/internal/check_op.h:466:33: note: expanded from macro 'ABSL_LOG_INTERNAL_CHECK_OP_IMPL'
+cargo:warning=  466 |     return ABSL_PREDICT_TRUE(v1 op v2)                                     \
+cargo:warning=      |                              ~~ ^  ~~
+cargo:warning=/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/absl-src/absl/base/optimization.h:192:58: note: expanded from macro 'ABSL_PREDICT_TRUE'
+cargo:warning=  192 | #define ABSL_PREDICT_TRUE(x) (__builtin_expect(false || (x), true))
+cargo:warning=      |                                                          ^
+cargo:warning=/Users/kpernyer/repo/converge.zone/converge-optimization/ortools/util/bitset.h:296:3: note: in instantiation of function template specialization 'absl::log_internal::Check_LEImpl<unsigned int, int>' requested here
+cargo:warning=  296 |   DCHECK_LE(s, 31);
+cargo:warning=      |   ^
+cargo:warning=/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/absl-src/absl/log/check.h:146:3: note: expanded from macro 'DCHECK_LE'
+cargo:warning=  146 |   ABSL_LOG_INTERNAL_DCHECK_LE_IMPL((val1), #val1, (val2), #val2)
+cargo:warning=      |   ^
+cargo:warning=/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/absl-src/absl/log/internal/check_impl.h:77:3: note: expanded from macro 'ABSL_LOG_INTERNAL_DCHECK_LE_IMPL'
+cargo:warning=   77 |   ABSL_LOG_INTERNAL_CHECK_LE_IMPL(val1, val1_text, val2, val2_text)
+cargo:warning=      |   ^
+cargo:warning=/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/absl-src/absl/log/internal/check_impl.h:52:3: note: expanded from macro 'ABSL_LOG_INTERNAL_CHECK_LE_IMPL'
+cargo:warning=   52 |   ABSL_LOG_INTERNAL_CHECK_OP(Check_LE, <=, val1, val1_text, val2, val2_text)
+cargo:warning=      |   ^
+cargo:warning=/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/absl-src/absl/log/internal/check_op.h:69:51: note: expanded from macro 'ABSL_LOG_INTERNAL_CHECK_OP'
+cargo:warning=   69 |          [[maybe_unused]] = ::absl::log_internal::name##Impl(                  \
+cargo:warning=      |                                                   ^
+cargo:warning=<scratch space>:20:1: note: expanded from here
+cargo:warning=   20 | Check_LEImpl
+cargo:warning=      | ^
+cargo:warning=4 warnings generated.
+cargo:rerun-if-env-changed=AR_aarch64-apple-darwin
+AR_aarch64-apple-darwin = None
+cargo:rerun-if-env-changed=AR_aarch64_apple_darwin
+AR_aarch64_apple_darwin = None
+cargo:rerun-if-env-changed=HOST_AR
+HOST_AR = None
+cargo:rerun-if-env-changed=AR
+AR = None
+cargo:rerun-if-env-changed=ARFLAGS
+ARFLAGS = None
+cargo:rerun-if-env-changed=HOST_ARFLAGS
+HOST_ARFLAGS = None
+cargo:rerun-if-env-changed=ARFLAGS_aarch64_apple_darwin
+ARFLAGS_aarch64_apple_darwin = None
+cargo:rerun-if-env-changed=ARFLAGS_aarch64-apple-darwin
+ARFLAGS_aarch64-apple-darwin = None
+cargo:rustc-link-lib=static=ortools_wrapper
+cargo:rustc-link-search=native=/Users/kpernyer/repo/converge.zone/converge-optimization/target/debug/build/ortools-sys-c0cdb99d1b8d1ab5/out
+cargo:rerun-if-env-changed=CXXSTDLIB_aarch64-apple-darwin
+CXXSTDLIB_aarch64-apple-darwin = None
+cargo:rerun-if-env-changed=CXXSTDLIB_aarch64_apple_darwin
+CXXSTDLIB_aarch64_apple_darwin = None
+cargo:rerun-if-env-changed=HOST_CXXSTDLIB
+HOST_CXXSTDLIB = None
+cargo:rerun-if-env-changed=CXXSTDLIB
+CXXSTDLIB = None
+cargo:rustc-link-lib=c++
+cargo:rustc-link-search=native=/Users/kpernyer/repo/converge.zone/converge-optimization/build/lib
+cargo:rustc-link-arg=-Wl,-rpath,/Users/kpernyer/repo/converge.zone/converge-optimization/build/lib
+cargo:rustc-link-lib=dylib=ortools
+cargo:rustc-link-lib=dylib=absl_log_internal_message
+cargo:rustc-link-lib=dylib=absl_log_internal_check_op
+cargo:rustc-link-lib=dylib=absl_log_internal_nullguard
+cargo:rustc-link-lib=dylib=absl_log_internal_conditions
+cargo:rustc-link-lib=dylib=absl_log_internal_format
+cargo:rustc-link-lib=dylib=absl_log_internal_globals
+cargo:rustc-link-lib=dylib=absl_log_internal_log_sink_set
+cargo:rustc-link-lib=dylib=absl_log_globals
+cargo:rustc-link-lib=dylib=absl_log_entry
+cargo:rustc-link-lib=dylib=absl_log_severity
+cargo:rustc-link-lib=dylib=absl_raw_logging_internal
+cargo:rustc-link-lib=dylib=absl_examine_stack
+cargo:rustc-link-lib=dylib=absl_stacktrace
+cargo:rustc-link-lib=dylib=absl_symbolize
+cargo:rustc-link-lib=dylib=absl_debugging_internal
+cargo:rustc-link-lib=dylib=absl_demangle_internal
+cargo:rustc-link-lib=dylib=absl_demangle_rust
+cargo:rustc-link-lib=dylib=absl_decode_rust_punycode
+cargo:rustc-link-lib=dylib=absl_time
+cargo:rustc-link-lib=dylib=absl_time_zone
+cargo:rustc-link-lib=dylib=absl_civil_time
+cargo:rustc-link-lib=dylib=absl_strings
+cargo:rustc-link-lib=dylib=absl_strings_internal
+cargo:rustc-link-lib=dylib=absl_string_view
+cargo:rustc-link-lib=dylib=absl_int128
+cargo:rustc-link-lib=dylib=absl_throw_delegate
+cargo:rustc-link-lib=dylib=absl_base
+cargo:rustc-link-lib=dylib=absl_spinlock_wait
+cargo:rustc-link-lib=dylib=absl_synchronization
+cargo:rustc-link-lib=dylib=absl_malloc_internal
+cargo:rustc-link-lib=dylib=absl_graphcycles_internal
+cargo:rustc-link-lib=dylib=absl_kernel_timeout_internal
+cargo:rustc-link-lib=dylib=absl_hashtablez_sampler
+cargo:rustc-link-lib=dylib=absl_exponential_biased
+cargo:rustc-link-lib=dylib=absl_hash
+cargo:rustc-link-lib=dylib=absl_city
+cargo:rustc-link-lib=dylib=absl_raw_hash_set
+cargo:rustc-link-lib=dylib=absl_status
+cargo:rustc-link-lib=dylib=absl_statusor
+cargo:rustc-link-lib=dylib=absl_cord
+cargo:rustc-link-lib=dylib=absl_cord_internal
+cargo:rustc-link-lib=dylib=absl_cordz_functions
+cargo:rustc-link-lib=dylib=absl_cordz_handle
+cargo:rustc-link-lib=dylib=absl_cordz_info
+cargo:rustc-link-lib=dylib=absl_cordz_sample_token
+cargo:rustc-link-lib=dylib=absl_crc32c
+cargo:rustc-link-lib=dylib=absl_crc_cord_state
+cargo:rustc-link-lib=dylib=absl_crc_cpu_detect
+cargo:rustc-link-lib=dylib=absl_crc_internal
+cargo:rustc-link-lib=dylib=absl_strerror
+cargo:rustc-link-lib=dylib=absl_random_internal_seed_material
+cargo:rustc-link-lib=dylib=absl_random_seed_gen_exception
+cargo:rustc-link-lib=dylib=absl_random_seed_sequences
+cargo:rustc-link-lib=dylib=absl_random_distributions
+cargo:rustc-link-lib=dylib=absl_random_internal_randen
+cargo:rustc-link-lib=dylib=absl_random_internal_randen_hwaes
+cargo:rustc-link-lib=dylib=absl_random_internal_randen_hwaes_impl
+cargo:rustc-link-lib=dylib=absl_random_internal_randen_slow
+cargo:rustc-link-lib=dylib=absl_random_internal_platform
+cargo:rustc-link-lib=dylib=absl_random_internal_entropy_pool
+cargo:rustc-link-lib=dylib=absl_str_format_internal
+cargo:rustc-link-lib=dylib=absl_tracing_internal
+cargo:rustc-link-lib=dylib=absl_vlog_config_internal
+cargo:rustc-link-lib=dylib=protobuf
+cargo:rustc-link-lib=c++

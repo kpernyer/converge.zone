@@ -1,0 +1,1 @@
+/usr/bin/c++  -std=c++11 -O3 -DNDEBUG -flto=thin -arch arm64 -mmacosx-version-min=10.15 -Wl,-search_paths_first -Wl,-headerpad_max_install_names "CMakeFiles/highs-bin.dir/RunHighs.cpp.o" -o ../../../bin/highs  -Wl,-rpath,/Users/kpernyer/repo/converge.zone/converge-optimization/build/lib ../../../lib/libhighs.1.12.dylib

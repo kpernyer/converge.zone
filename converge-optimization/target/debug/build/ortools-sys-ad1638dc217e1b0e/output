@@ -1,0 +1,3 @@
+cargo:rerun-if-changed=build.rs
+cargo:rerun-if-changed=wrapper.h
+cargo:rerun-if-changed=wrapper.cc

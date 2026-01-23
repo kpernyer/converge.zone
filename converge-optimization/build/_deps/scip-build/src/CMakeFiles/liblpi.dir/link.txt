@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG -arch arm64 -mmacosx-version-min=10.15 -dynamiclib -Wl,-headerpad_max_install_names -o ../../../lib/liblpi.dylib -install_name @rpath/liblpi.dylib CMakeFiles/liblpi.dir/lpi/lpi_spx.cpp.o CMakeFiles/liblpi.dir/scip/bitencode.c.o CMakeFiles/liblpi.dir/blockmemshell/memory.c.o CMakeFiles/liblpi.dir/scip/message.c.o

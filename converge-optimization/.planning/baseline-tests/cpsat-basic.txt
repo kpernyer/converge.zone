@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    from ortools.sat.python import cp_model; print('CP-SAT import OK'); m = cp_model.CpModel(); x = m.new_int_var(0, 10, 'x'); y = m.new_int_var(0, 10, 'y'); m.add(x + y <= 15); m.maximize(x + 2*y); s = cp_model.CpSolver(); status = s.solve(m); print(f'Status: {s.status_name(status)}'); print(f'x={s.value(x)}, y={s.value(y)}, obj={s.objective_value}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kpernyer/repo/converge.zone/converge-optimization/ortools/sat/python/cp_model.py", line 61, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
