@@ -16,7 +16,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 2: Dependency Cleanup** - Remove forbidden dependencies
 - [x] **Phase 3: Type Consolidation** - Organize core type vocabulary
 - [x] **Phase 4: Gate Pattern** - Implement ProposalLifecycle abstraction
-- [ ] **Phase 5: Trait Definitions** - Define capability boundary traits
+- [x] **Phase 5: Trait Definitions** - Define capability boundary traits
 - [ ] **Phase 6: Testing Infrastructure** - Property-based and snapshot tests
 - [ ] **Phase 7: Documentation** - BOUNDARY.md, module docs
 - [ ] **Phase 8: Stabilization** - Final cleanup and validation
@@ -95,11 +95,12 @@ Plans:
   3. BOUNDARY.md documents which crate owns each trait implementation
   4. No impl blocks in core for capability traits
   5. traits/ module re-exports all capability boundary traits
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 05-01: Define capability boundary traits
-- [ ] 05-02: Create BOUNDARY.md and deprecate implementations
+- [x] 05-01-PLAN.md — Create CapabilityError trait and LLM capability traits (ChatBackend, EmbedBackend)
+- [x] 05-02-PLAN.md — Create Recall traits (RecallReader, RecallWriter) and Store traits (ExperienceAppender, ExperienceReplayer)
+- [x] 05-03-PLAN.md — Create Validator/Promoter traits, deprecate existing implementations, create BOUNDARY.md
 
 ### Phase 6: Testing Infrastructure
 **Goal**: Property-based tests prove invariants; snapshot tests lock serialization
@@ -159,7 +160,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | 2. Dependency Cleanup | 2/2 | Complete | 2026-01-23 |
 | 3. Type Consolidation | 2/2 | Complete | 2026-01-23 |
 | 4. Gate Pattern | 2/2 | Complete | 2026-01-23 |
-| 5. Trait Definitions | 0/2 | Not started | - |
+| 5. Trait Definitions | 3/3 | Complete | 2026-01-24 |
 | 6. Testing Infrastructure | 0/2 | Not started | - |
 | 7. Documentation | 0/2 | Not started | - |
 | 8. Stabilization | 0/1 | Not started | - |
@@ -213,4 +214,4 @@ All 39 v1 requirements mapped:
 **Coverage: 39/39 requirements mapped**
 
 ---
-*Last updated: 2026-01-23*
+*Last updated: 2026-01-24*
