@@ -46,10 +46,11 @@ Plans:
   2. `cargo deny check` passes with zero violations
   3. `cargo build` succeeds without forbidden dependencies
   4. proptest, insta, static_assertions added as dev-dependencies
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 02-01: Remove forbidden dependencies and add test infrastructure
+- [ ] 02-01-PLAN.md - Create traits module with stub traits (Executor, Randomness, Fingerprint)
+- [ ] 02-02-PLAN.md - Replace forbidden dependencies and add test infrastructure
 
 ### Phase 3: Type Consolidation
 **Goal**: Core type vocabulary organized in types/ module with stable serialization
@@ -155,7 +156,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. CI Foundation | 1/1 | Complete | 2026-01-23 |
-| 2. Dependency Cleanup | 0/1 | Not started | - |
+| 2. Dependency Cleanup | 0/2 | Not started | - |
 | 3. Type Consolidation | 0/2 | Not started | - |
 | 4. Gate Pattern | 0/2 | Not started | - |
 | 5. Trait Definitions | 0/2 | Not started | - |
