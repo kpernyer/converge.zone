@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-01-23)
 
 **Core value:** converge-core encodes Converge's axioms as testable invariants and provides stable, portable interfaces for all capability crates to build upon.
-**Current focus:** Phase 5 - Trait Definitions (In Progress)
+**Current focus:** Phase 5 - Trait Definitions (Complete)
 
 ## Current Position
 
 Phase: 5 of 8 (Trait Definitions)
-Plan: 2 of 3 in current phase
-Status: In progress
-Last activity: 2026-01-24 - Completed 05-02-PLAN.md
+Plan: 3 of 3 in current phase
+Status: Phase complete
+Last activity: 2026-01-24 - Completed 05-03-PLAN.md
 
-Progress: [######----] 67% (6/9 plans complete)
+Progress: [#######---] 78% (7/9 plans complete)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 8
-- Average duration: 6.0 min
-- Total execution time: 0.80 hours
+- Total plans completed: 9
+- Average duration: 5.8 min
+- Total execution time: 0.87 hours
 
 **By Phase:**
 
@@ -31,11 +31,11 @@ Progress: [######----] 67% (6/9 plans complete)
 | 02-dependency-cleanup | 2 | 8 min | 4 min |
 | 03-type-consolidation | 2 | 15 min | 7.5 min |
 | 04-gate-pattern | 2 | 14 min | 7 min |
-| 05-trait-definitions | 2 | 12 min | 6 min |
+| 05-trait-definitions | 3 | 16 min | 5.3 min |
 
 **Recent Trend:**
-- Last 5 plans: 03-02 (7 min), 04-01 (8 min), 04-02 (6 min), 05-01 (6 min), 05-02 (6 min)
-- Trend: Stable
+- Last 5 plans: 04-01 (8 min), 04-02 (6 min), 05-01 (6 min), 05-02 (6 min), 05-03 (4 min)
+- Trend: Stable/Improving
 
 *Updated after each plan completion*
 
@@ -80,6 +80,10 @@ Recent decisions affecting current work:
 - [Phase 5-02]: RecallReader and RecallWriter split by authority boundary
 - [Phase 5-02]: ExperienceAppender and ExperienceReplayer split by operation type
 - [Phase 5-02]: Dyn-safe wrappers use explicit lifetime parameters
+- [Phase 5-03]: Validator returns ValidationReport (proof object)
+- [Phase 5-03]: Promoter takes Proposal<Validated> (type-state enforcement)
+- [Phase 5-03]: PromotionContext bundles approver, evidence, trace
+- [Phase 5-03]: Deprecation notes reference BOUNDARY.md
 
 ### Pending Todos
 
@@ -91,18 +95,21 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-01-24 00:20
-Stopped at: Completed 05-02-PLAN.md
+Last session: 2026-01-24 00:27
+Stopped at: Completed 05-03-PLAN.md
 Resume file: None
 
 ---
 
 ## Next Steps
 
-1. Phase 05-02 complete - Recall and Store traits implemented:
-   - RecallReader, RecallWriter, Recall umbrella
-   - ExperienceAppender, ExperienceReplayer
-   - RecallError and StoreError implementing CapabilityError
-   - Dyn-safe wrappers for runtime polymorphism
-2. Plan 05-03 remaining for Validator/Promoter traits
-3. Then Phase 06 for deprecation of existing implementations
+1. Phase 05 complete - All capability boundary traits implemented:
+   - Error infrastructure: CapabilityError, ErrorCategory
+   - LLM: ChatBackend, EmbedBackend, LlmBackend
+   - Recall: RecallReader, RecallWriter, Recall
+   - Store: ExperienceAppender, ExperienceReplayer
+   - Validation: Validator, Promoter
+   - Deprecation: LlmProvider, LlmBackend (backend.rs), ExperienceStore
+   - Documentation: BOUNDARY.md with trait ownership table
+2. Ready for Phase 06: Integration with existing code
+3. Then Phase 07: Testing and validation
