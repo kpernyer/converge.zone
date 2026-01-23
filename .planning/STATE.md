@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-01-23)
 
 **Core value:** converge-core encodes Converge's axioms as testable invariants and provides stable, portable interfaces for all capability crates to build upon.
-**Current focus:** Phase 4 - Gate Pattern (Complete)
+**Current focus:** Phase 5 - Trait Definitions (In Progress)
 
 ## Current Position
 
-Phase: 4 of 8 (Gate Pattern)
-Plan: 2 of 2 in current phase
-Status: Phase complete
-Last activity: 2026-01-23 - Completed 04-02-PLAN.md
+Phase: 5 of 8 (Trait Definitions)
+Plan: 2 of 3 in current phase
+Status: In progress
+Last activity: 2026-01-24 - Completed 05-02-PLAN.md
 
-Progress: [#####-----] 56% (5/9 plans complete)
+Progress: [######----] 67% (6/9 plans complete)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 7
+- Total plans completed: 8
 - Average duration: 6.0 min
-- Total execution time: 0.70 hours
+- Total execution time: 0.80 hours
 
 **By Phase:**
 
@@ -31,9 +31,10 @@ Progress: [#####-----] 56% (5/9 plans complete)
 | 02-dependency-cleanup | 2 | 8 min | 4 min |
 | 03-type-consolidation | 2 | 15 min | 7.5 min |
 | 04-gate-pattern | 2 | 14 min | 7 min |
+| 05-trait-definitions | 2 | 12 min | 6 min |
 
 **Recent Trend:**
-- Last 5 plans: 03-01 (8 min), 03-02 (7 min), 04-01 (8 min), 04-02 (6 min)
+- Last 5 plans: 03-02 (7 min), 04-01 (8 min), 04-02 (6 min), 05-01 (6 min), 05-02 (6 min)
 - Trend: Stable
 
 *Updated after each plan completion*
@@ -72,6 +73,13 @@ Recent decisions affecting current work:
 - [Phase 4-02]: tick() returns Option<StopReason> for exhaustion detection
 - [Phase 4-02]: StopReason #[non_exhaustive] for future extensibility
 - [Phase 4-02]: AuthorityGrant pub(crate) constructors - no external forgery
+- [Phase 5-01]: CapabilityError trait with category(), is_transient(), is_retryable(), retry_after()
+- [Phase 5-01]: ErrorCategory enum with 9 variants (Timeout, RateLimit, Auth, etc.)
+- [Phase 5-01]: ChatBackend and EmbedBackend use GAT async pattern
+- [Phase 5-01]: LlmBackend umbrella combines ChatBackend + EmbedBackend
+- [Phase 5-02]: RecallReader and RecallWriter split by authority boundary
+- [Phase 5-02]: ExperienceAppender and ExperienceReplayer split by operation type
+- [Phase 5-02]: Dyn-safe wrappers use explicit lifetime parameters
 
 ### Pending Todos
 
@@ -83,20 +91,18 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-01-23 22:28
-Stopped at: Completed 04-02-PLAN.md
+Last session: 2026-01-24 00:20
+Stopped at: Completed 05-02-PLAN.md
 Resume file: None
 
 ---
 
 ## Next Steps
 
-1. Phase 04 complete - gates/ module fully implemented:
-   - ProposalLifecycle trait
-   - PromotionGate with ValidatedProposal
-   - ValidationReport with ValidationPolicy
-   - Budget types (Cycle/Fact/Token) with tick() -> Option<StopReason>
-   - StopReason exhaustive enumeration
-   - AuthorityGrant with constitutional re-exports
-2. Ready for Phase 05 (Kernel Extraction) or next roadmap phase
-3. 69 gate module tests passing (18 stop + 30 budget + 5 boundary + 16 existing)
+1. Phase 05-02 complete - Recall and Store traits implemented:
+   - RecallReader, RecallWriter, Recall umbrella
+   - ExperienceAppender, ExperienceReplayer
+   - RecallError and StoreError implementing CapabilityError
+   - Dyn-safe wrappers for runtime polymorphism
+2. Plan 05-03 remaining for Validator/Promoter traits
+3. Then Phase 06 for deprecation of existing implementations
