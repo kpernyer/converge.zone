@@ -12,7 +12,7 @@ Restore converge-core to its pure, portable, axiomatic foundation by establishin
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: CI Foundation** - Guardrails before code changes
+- [x] **Phase 1: CI Foundation** - Guardrails before code changes
 - [ ] **Phase 2: Dependency Cleanup** - Remove forbidden dependencies
 - [ ] **Phase 3: Type Consolidation** - Organize core type vocabulary
 - [ ] **Phase 4: Gate Pattern** - Implement ProposalLifecycle abstraction
@@ -35,7 +35,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 1 plan
 
 Plans:
-- [ ] 01-01-PLAN.md - Create deny.toml, PURITY.md, and CI workflow
+- [x] 01-01-PLAN.md - Create deny.toml, PURITY.md, and CI workflow
 
 ### Phase 2: Dependency Cleanup
 **Goal**: Cargo.toml contains only allowed dependencies; forbidden runtime dependencies removed
@@ -154,7 +154,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. CI Foundation | 0/1 | Planned | - |
+| 1. CI Foundation | 1/1 | Complete | 2026-01-23 |
 | 2. Dependency Cleanup | 0/1 | Not started | - |
 | 3. Type Consolidation | 0/2 | Not started | - |
 | 4. Gate Pattern | 0/2 | Not started | - |
