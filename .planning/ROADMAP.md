@@ -32,10 +32,10 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. PURITY.md exists with explicit ALLOWED/FORBIDDEN dependency lists
   3. CI pipeline includes cargo-deny step that blocks forbidden dependencies
   4. deny.toml covers all forbidden patterns from PROJECT.md
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] 01-01: Create deny.toml and PURITY.md
+- [ ] 01-01-PLAN.md - Create deny.toml, PURITY.md, and CI workflow
 
 ### Phase 2: Dependency Cleanup
 **Goal**: Cargo.toml contains only allowed dependencies; forbidden runtime dependencies removed
@@ -154,7 +154,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. CI Foundation | 0/1 | Not started | - |
+| 1. CI Foundation | 0/1 | Planned | - |
 | 2. Dependency Cleanup | 0/1 | Not started | - |
 | 3. Type Consolidation | 0/2 | Not started | - |
 | 4. Gate Pattern | 0/2 | Not started | - |
