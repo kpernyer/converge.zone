@@ -147,10 +147,11 @@ Plans:
   3. `cargo build` succeeds with zero warnings
   4. `cargo doc` builds without warnings
   5. All 39 v1 requirements verified complete
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 08-01: Final validation and cleanup
+- [ ] 08-01-PLAN.md — Fix doc warnings, resolve cargo-deny hex policy, verify build checks
+- [ ] 08-02-PLAN.md — Create MILESTONE-VERIFICATION.md with requirement traceability
 
 ## Progress
 
@@ -166,7 +167,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | 5. Trait Definitions | 3/3 | Complete | 2026-01-24 |
 | 6. Testing Infrastructure | 5/5 | Complete | 2026-01-24 |
 | 7. Documentation | 2/2 | Complete | 2026-01-24 |
-| 8. Stabilization | 0/1 | Not started | - |
+| 8. Stabilization | 0/2 | Not started | - |
 
 ## Requirement Coverage
 
