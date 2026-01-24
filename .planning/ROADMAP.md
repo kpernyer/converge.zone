@@ -113,11 +113,14 @@ Plans:
   4. static_assertions verify Send/Sync bounds at compile time
   5. TraceLink separation (Local vs Remote) is tested
   6. Replayability honesty is verified (determinism guarantees hold)
-**Plans**: TBD
+**Plans**: 5 plans
 
 Plans:
-- [ ] 06-01: Implement proptest invariant tests
-- [ ] 06-02: Implement insta snapshot tests and static assertions
+- [ ] 06-01-PLAN.md — Create test harness infrastructure (tests/common/ with strategies, harness, helpers)
+- [ ] 06-02-PLAN.md — Create proptest invariant tests (promotion, append-only, budget exhaustion)
+- [ ] 06-03-PLAN.md — Create insta snapshot tests for all P0/P1 types
+- [ ] 06-04-PLAN.md — Create static assertions and compile-fail tests (trybuild)
+- [ ] 06-05-PLAN.md — Create determinism verification tests (golden scenarios, replay)
 
 ### Phase 7: Documentation
 **Goal**: Module documentation complete; nine tenets documented in crate docs
@@ -161,7 +164,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | 3. Type Consolidation | 2/2 | Complete | 2026-01-23 |
 | 4. Gate Pattern | 2/2 | Complete | 2026-01-23 |
 | 5. Trait Definitions | 3/3 | Complete | 2026-01-24 |
-| 6. Testing Infrastructure | 0/2 | Not started | - |
+| 6. Testing Infrastructure | 0/5 | Not started | - |
 | 7. Documentation | 0/2 | Not started | - |
 | 8. Stabilization | 0/1 | Not started | - |
 
