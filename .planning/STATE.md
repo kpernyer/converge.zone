@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-01-23)
 
 **Core value:** converge-core encodes Converge's axioms as testable invariants and provides stable, portable interfaces for all capability crates to build upon.
-**Current focus:** Phase 6 - Testing Infrastructure
+**Current focus:** Phase 6 - Testing Infrastructure (COMPLETE)
 
 ## Current Position
 
 Phase: 6 of 8 (Testing Infrastructure)
-Plan: 4 of 4 in current phase
+Plan: 5 of 5 in current phase
 Status: Phase complete
-Last activity: 2026-01-24 - Completed 06-04-PLAN.md
+Last activity: 2026-01-24 - Completed 06-05-PLAN.md
 
-Progress: [#########-] 90% (12/13 plans complete)
+Progress: [##########] 100% (13/13 plans complete)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 12
-- Average duration: 5.3 min
-- Total execution time: 1.06 hours
+- Total plans completed: 13
+- Average duration: 5.2 min
+- Total execution time: 1.13 hours
 
 **By Phase:**
 
@@ -32,10 +32,10 @@ Progress: [#########-] 90% (12/13 plans complete)
 | 03-type-consolidation | 2 | 15 min | 7.5 min |
 | 04-gate-pattern | 2 | 14 min | 7 min |
 | 05-trait-definitions | 3 | 16 min | 5.3 min |
-| 06-testing-infrastructure | 4 | 24 min | 6 min |
+| 06-testing-infrastructure | 5 | 28 min | 5.6 min |
 
 **Recent Trend:**
-- Last 5 plans: 05-03 (4 min), 06-01 (10 min), 06-02 (6 min), 06-03 (4 min), 06-04 (4 min)
+- Last 5 plans: 06-01 (10 min), 06-02 (6 min), 06-03 (4 min), 06-04 (4 min), 06-05 (4 min)
 - Trend: Stable
 
 *Updated after each plan completion*
@@ -94,6 +94,9 @@ Recent decisions affecting current work:
 - [Phase 6-04]: Top-level test file for static assertions (not subdirectory)
 - [Phase 6-04]: 60+ types verified Send+Sync at compile time
 - [Phase 6-04]: Trybuild for compile-fail tests on private constructors
+- [Phase 6-05]: Golden scenarios as JSON files in tests/golden/
+- [Phase 6-05]: TraceLink::Local is replay-eligible, TraceLink::Remote is not
+- [Phase 6-05]: ReplayRunner verifies determinism by running scenarios twice
 
 ### Pending Todos
 
@@ -105,22 +108,23 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-01-24 09:41
-Stopped at: Completed 06-02-PLAN.md (proptest invariants)
+Last session: 2026-01-24 09:47
+Stopped at: Completed 06-05-PLAN.md (determinism verification)
 Resume file: None
 
 ---
 
 ## Next Steps
 
-1. Phase 06 complete - Testing infrastructure fully built:
+1. **Phase 06 COMPLETE** - Testing infrastructure fully built:
    - Core helpers: DeterministicIdGenerator, FrozenClock, IdNormalizer
    - Proptest strategies for all core types (30+ strategies)
    - TestHarness for gate lifecycle testing
    - ReplayRunner for golden scenarios
-   - Promotion invariant proptests
-   - Insta snapshot tests
+   - Promotion invariant proptests (89 tests)
+   - Insta snapshot tests (80 snapshots)
    - Static assertions for Send+Sync (60+ types)
    - Compile-fail tests for private constructors
+   - Determinism verification tests (12 tests, 3 golden scenarios)
 2. Continue with Phase 07: Crate structure (if planned)
 3. Or Phase 08: Boundary documentation
