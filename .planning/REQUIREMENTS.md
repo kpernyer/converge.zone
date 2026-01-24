@@ -154,7 +154,7 @@ REQ-TRAIT-* --> REQ-V2-* (Traits before extraction)
 | REQ-TYPE-06 | Phase 2 | Complete |
 | REQ-TYPE-07 | Phase 3 | Pending |
 | REQ-TYPE-08 | Phase 3 | Pending |
-| REQ-TYPE-09 | Phase 7 | Pending |
+| REQ-TYPE-09 | Phase 7 | Complete |
 | REQ-TYPE-10 | Phase 6 | Complete |
 | REQ-GATE-01 | Phase 4 | Complete |
 | REQ-GATE-02 | Phase 4 | Complete |
@@ -178,13 +178,13 @@ REQ-TRAIT-* --> REQ-V2-* (Traits before extraction)
 | REQ-CI-03 | Phase 6 | Complete |
 | REQ-CI-04 | Phase 6 | Complete |
 | REQ-CI-05 | Phase 6 | Complete |
-| REQ-CI-06 | Phase 7 | Pending |
+| REQ-CI-06 | Phase 7 | Complete |
 | REQ-CI-07 | Phase 6 | Complete |
 | REQ-CI-08 | Phase 1 | Complete |
 | REQ-DOC-01 | Phase 1 | Complete |
 | REQ-DOC-02 | Phase 5 | Complete |
-| REQ-DOC-03 | Phase 7 | Pending |
-| REQ-DOC-04 | Phase 7 | Pending |
+| REQ-DOC-03 | Phase 7 | Complete |
+| REQ-DOC-04 | Phase 7 | Complete |
 
 ---
 *Last updated: 2026-01-24*
