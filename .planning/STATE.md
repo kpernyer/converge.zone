@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-01-23)
 
 **Core value:** converge-core encodes Converge's axioms as testable invariants and provides stable, portable interfaces for all capability crates to build upon.
-**Current focus:** Phase 7 - Documentation (COMPLETE)
+**Current focus:** Phase 8 - Stabilization (IN PROGRESS)
 
 ## Current Position
 
-Phase: 7 of 8 (Documentation)
-Plan: 2 of 2 in current phase
-Status: Phase complete
-Last activity: 2026-01-24 - Completed 07-01-PLAN.md
+Phase: 8 of 8 (Stabilization)
+Plan: 1 of ? in current phase
+Status: In progress
+Last activity: 2026-01-24 - Completed 08-01-PLAN.md
 
-Progress: [###############] 100% (15/15 plans complete)
+Progress: [################] 100%+ (16/15+ plans complete)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 13
-- Average duration: 5.2 min
-- Total execution time: 1.13 hours
+- Total plans completed: 16
+- Average duration: 4.9 min
+- Total execution time: 1.18 hours
 
 **By Phase:**
 
@@ -34,9 +34,10 @@ Progress: [###############] 100% (15/15 plans complete)
 | 05-trait-definitions | 3 | 16 min | 5.3 min |
 | 06-testing-infrastructure | 5 | 28 min | 5.6 min |
 | 07-documentation | 2 | 5 min | 2.5 min |
+| 08-stabilization | 1 | 3 min | 3 min |
 
 **Recent Trend:**
-- Last 5 plans: 06-02 (6 min), 06-03 (4 min), 06-04 (4 min), 06-05 (4 min), 07-02 (1 min)
+- Last 5 plans: 06-04 (4 min), 06-05 (4 min), 07-01 (4 min), 07-02 (1 min), 08-01 (3 min)
 - Trend: Stable
 
 *Updated after each plan completion*
@@ -104,6 +105,8 @@ Recent decisions affecting current work:
 - [Phase 7-01]: TypesFact/TypesTraceLink naming to avoid re-export ambiguity
 - [Phase 7-01]: Tenet alignment tables in module documentation
 - [Phase 7-01]: crate:: prefix for cross-module rustdoc links
+- [Phase 8-01]: hex crate allowed for ContentHash serialization (not crypto)
+- [Phase 8-01]: LicenseRef-Proprietary added to allowed licenses for converge-core
 
 ### Pending Todos
 
@@ -112,18 +115,19 @@ None.
 ### Blockers/Concerns
 
 - **Nested git repositories:** converge-core has separate .git from workspace. Task commits split between repos. Requires separate push operations.
+- **Pre-existing formatting issues:** cargo fmt --check shows differences across many files (technical debt)
+- **Clippy warnings:** 518 clippy warnings exist (existing technical debt)
 
 ## Session Continuity
 
-Last session: 2026-01-24 17:15
-Stopped at: Completed 07-01-PLAN.md (crate and module documentation)
+Last session: 2026-01-24 18:18
+Stopped at: Completed 08-01-PLAN.md (doc warnings and cargo-deny fixes)
 Resume file: None
 
 ---
 
 ## Next Steps
 
-1. **Phase 07 COMPLETE** - Documentation phase fully built:
-   - [COMPLETE] 07-01: Nine Design Tenets and Purity Declaration in lib.rs
-   - [COMPLETE] 07-02: converge-core CI workflow with cargo-semver-checks
-2. Continue with Phase 08 if planned
+1. **Phase 08 IN PROGRESS** - Stabilization phase:
+   - [COMPLETE] 08-01: Fix doc warnings and cargo-deny hex violation
+   - Continue with remaining Phase 8 plans if any
