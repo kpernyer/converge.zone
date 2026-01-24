@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-01-23)
 
 **Core value:** converge-core encodes Converge's axioms as testable invariants and provides stable, portable interfaces for all capability crates to build upon.
-**Current focus:** Phase 6 - Testing Infrastructure (COMPLETE)
+**Current focus:** Phase 7 - Documentation (In Progress)
 
 ## Current Position
 
-Phase: 6 of 8 (Testing Infrastructure)
-Plan: 5 of 5 in current phase
-Status: Phase complete
-Last activity: 2026-01-24 - Completed 06-05-PLAN.md
+Phase: 7 of 8 (Documentation)
+Plan: 2 of ? in current phase
+Status: In progress
+Last activity: 2026-01-24 - Completed 07-02-PLAN.md
 
-Progress: [##########] 100% (13/13 plans complete)
+Progress: [##############] 100% (14/14 plans complete)
 
 ## Performance Metrics
 
@@ -33,9 +33,10 @@ Progress: [##########] 100% (13/13 plans complete)
 | 04-gate-pattern | 2 | 14 min | 7 min |
 | 05-trait-definitions | 3 | 16 min | 5.3 min |
 | 06-testing-infrastructure | 5 | 28 min | 5.6 min |
+| 07-documentation | 2 | 1 min | 0.5 min |
 
 **Recent Trend:**
-- Last 5 plans: 06-01 (10 min), 06-02 (6 min), 06-03 (4 min), 06-04 (4 min), 06-05 (4 min)
+- Last 5 plans: 06-02 (6 min), 06-03 (4 min), 06-04 (4 min), 06-05 (4 min), 07-02 (1 min)
 - Trend: Stable
 
 *Updated after each plan completion*
@@ -97,6 +98,9 @@ Recent decisions affecting current work:
 - [Phase 6-05]: Golden scenarios as JSON files in tests/golden/
 - [Phase 6-05]: TraceLink::Local is replay-eligible, TraceLink::Remote is not
 - [Phase 6-05]: ReplayRunner verifies determinism by running scenarios twice
+- [Phase 7-02]: Git-based baseline comparison for cargo-semver-checks (not crates.io)
+- [Phase 7-02]: Path filtering in CI to only trigger on relevant file changes
+- [Phase 7-02]: Separate CI jobs for parallel execution (check, deny, docs, semver)
 
 ### Pending Todos
 
@@ -108,23 +112,15 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-01-24 09:47
-Stopped at: Completed 06-05-PLAN.md (determinism verification)
+Last session: 2026-01-24 16:12
+Stopped at: Completed 07-02-PLAN.md (converge-core CI workflow)
 Resume file: None
 
 ---
 
 ## Next Steps
 
-1. **Phase 06 COMPLETE** - Testing infrastructure fully built:
-   - Core helpers: DeterministicIdGenerator, FrozenClock, IdNormalizer
-   - Proptest strategies for all core types (30+ strategies)
-   - TestHarness for gate lifecycle testing
-   - ReplayRunner for golden scenarios
-   - Promotion invariant proptests (89 tests)
-   - Insta snapshot tests (80 snapshots)
-   - Static assertions for Send+Sync (60+ types)
-   - Compile-fail tests for private constructors
-   - Determinism verification tests (12 tests, 3 golden scenarios)
-2. Continue with Phase 07: Crate structure (if planned)
-3. Or Phase 08: Boundary documentation
+1. **Phase 07 In Progress** - Documentation phase:
+   - [COMPLETE] 07-02: converge-core CI workflow with cargo-semver-checks
+   - Continue with remaining Phase 07 plans
+2. Phase 08: Boundary documentation (if planned)
