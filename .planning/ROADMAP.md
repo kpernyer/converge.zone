@@ -17,7 +17,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 3: Type Consolidation** - Organize core type vocabulary
 - [x] **Phase 4: Gate Pattern** - Implement ProposalLifecycle abstraction
 - [x] **Phase 5: Trait Definitions** - Define capability boundary traits
-- [ ] **Phase 6: Testing Infrastructure** - Property-based and snapshot tests
+- [x] **Phase 6: Testing Infrastructure** - Property-based and snapshot tests
 - [ ] **Phase 7: Documentation** - BOUNDARY.md, module docs
 - [ ] **Phase 8: Stabilization** - Final cleanup and validation
 
@@ -116,11 +116,11 @@ Plans:
 **Plans**: 5 plans
 
 Plans:
-- [ ] 06-01-PLAN.md — Create test harness infrastructure (tests/common/ with strategies, harness, helpers)
-- [ ] 06-02-PLAN.md — Create proptest invariant tests (promotion, append-only, budget exhaustion)
-- [ ] 06-03-PLAN.md — Create insta snapshot tests for all P0/P1 types
-- [ ] 06-04-PLAN.md — Create static assertions and compile-fail tests (trybuild)
-- [ ] 06-05-PLAN.md — Create determinism verification tests (golden scenarios, replay)
+- [x] 06-01-PLAN.md — Create test harness infrastructure (tests/common/ with strategies, harness, helpers)
+- [x] 06-02-PLAN.md — Create proptest invariant tests (promotion, append-only, budget exhaustion)
+- [x] 06-03-PLAN.md — Create insta snapshot tests for all P0/P1 types
+- [x] 06-04-PLAN.md — Create static assertions and compile-fail tests (trybuild)
+- [x] 06-05-PLAN.md — Create determinism verification tests (golden scenarios, replay)
 
 ### Phase 7: Documentation
 **Goal**: Module documentation complete; nine tenets documented in crate docs
@@ -164,7 +164,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | 3. Type Consolidation | 2/2 | Complete | 2026-01-23 |
 | 4. Gate Pattern | 2/2 | Complete | 2026-01-23 |
 | 5. Trait Definitions | 3/3 | Complete | 2026-01-24 |
-| 6. Testing Infrastructure | 0/5 | Not started | - |
+| 6. Testing Infrastructure | 5/5 | Complete | 2026-01-24 |
 | 7. Documentation | 0/2 | Not started | - |
 | 8. Stabilization | 0/1 | Not started | - |
 
