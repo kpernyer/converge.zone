@@ -131,11 +131,11 @@ Plans:
   2. types/, traits/, gates/ modules have comprehensive doc comments
   3. Nine design tenets documented in crate-level documentation
   4. cargo-semver-checks added to CI (API stability verification)
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 07-01: Write module and crate documentation
-- [ ] 07-02: Add cargo-semver-checks to CI
+- [ ] 07-01-PLAN.md — Add Nine Design Tenets and Purity Declaration sections to lib.rs
+- [ ] 07-02-PLAN.md — Add cargo-semver-checks to converge-core CI workflow
 
 ### Phase 8: Stabilization
 **Goal**: Final validation confirms purity, stability, and test coverage
