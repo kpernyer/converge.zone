@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-01-23)
 
 **Core value:** converge-core encodes Converge's axioms as testable invariants and provides stable, portable interfaces for all capability crates to build upon.
-**Current focus:** Phase 5 - Trait Definitions (Complete)
+**Current focus:** Phase 6 - Testing Infrastructure
 
 ## Current Position
 
-Phase: 5 of 8 (Trait Definitions)
-Plan: 3 of 3 in current phase
-Status: Phase complete
-Last activity: 2026-01-24 - Completed 05-03-PLAN.md
+Phase: 6 of 8 (Testing Infrastructure)
+Plan: 1 of 4 in current phase
+Status: In progress
+Last activity: 2026-01-24 - Completed 06-01-PLAN.md
 
-Progress: [#######---] 78% (7/9 plans complete)
+Progress: [########--] 80% (8/10 plans complete)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 9
-- Average duration: 5.8 min
-- Total execution time: 0.87 hours
+- Total plans completed: 10
+- Average duration: 5.9 min
+- Total execution time: 0.98 hours
 
 **By Phase:**
 
@@ -32,10 +32,11 @@ Progress: [#######---] 78% (7/9 plans complete)
 | 03-type-consolidation | 2 | 15 min | 7.5 min |
 | 04-gate-pattern | 2 | 14 min | 7 min |
 | 05-trait-definitions | 3 | 16 min | 5.3 min |
+| 06-testing-infrastructure | 1 | 10 min | 10 min |
 
 **Recent Trend:**
-- Last 5 plans: 04-01 (8 min), 04-02 (6 min), 05-01 (6 min), 05-02 (6 min), 05-03 (4 min)
-- Trend: Stable/Improving
+- Last 5 plans: 04-02 (6 min), 05-01 (6 min), 05-02 (6 min), 05-03 (4 min), 06-01 (10 min)
+- Trend: Stable
 
 *Updated after each plan completion*
 
@@ -84,6 +85,9 @@ Recent decisions affecting current work:
 - [Phase 5-03]: Promoter takes Proposal<Validated> (type-state enforcement)
 - [Phase 5-03]: PromotionContext bundles approver, evidence, trace
 - [Phase 5-03]: Deprecation notes reference BOUNDARY.md
+- [Phase 6-01]: FrozenClock uses Howard Hinnant date algorithm for leap years
+- [Phase 6-01]: IdNormalizer tracks 10 field types for JSON normalization
+- [Phase 6-01]: TestHarness wraps PromotionGate with state management
 
 ### Pending Todos
 
@@ -95,21 +99,19 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-01-24 00:27
-Stopped at: Completed 05-03-PLAN.md
+Last session: 2026-01-24 08:28
+Stopped at: Completed 06-01-PLAN.md
 Resume file: None
 
 ---
 
 ## Next Steps
 
-1. Phase 05 complete - All capability boundary traits implemented:
-   - Error infrastructure: CapabilityError, ErrorCategory
-   - LLM: ChatBackend, EmbedBackend, LlmBackend
-   - Recall: RecallReader, RecallWriter, Recall
-   - Store: ExperienceAppender, ExperienceReplayer
-   - Validation: Validator, Promoter
-   - Deprecation: LlmProvider, LlmBackend (backend.rs), ExperienceStore
-   - Documentation: BOUNDARY.md with trait ownership table
-2. Ready for Phase 06: Integration with existing code
-3. Then Phase 07: Testing and validation
+1. Phase 06-01 complete - Test infrastructure built:
+   - Core helpers: DeterministicIdGenerator, FrozenClock, IdNormalizer
+   - Proptest strategies for all core types (30+ strategies)
+   - TestHarness for gate lifecycle testing
+   - ReplayRunner for golden scenarios
+2. Continue with Phase 06-02: Gate proptest and invariant tests
+3. Then Phase 06-03: Snapshot tests
+4. Then Phase 06-04: Compile-fail tests
