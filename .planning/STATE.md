@@ -88,6 +88,9 @@ Recent decisions affecting current work:
 - [Phase 6-01]: FrozenClock uses Howard Hinnant date algorithm for leap years
 - [Phase 6-01]: IdNormalizer tracks 10 field types for JSON normalization
 - [Phase 6-01]: TestHarness wraps PromotionGate with state management
+- [Phase 6-02]: Proptest state machine pattern with GateOp enum for operation sequences
+- [Phase 6-02]: Extract matches! to local variable in prop_assert! for format string issues
+- [Phase 6-02]: Clone String values in prop_assert_eq! to avoid move errors
 - [Phase 6-04]: Top-level test file for static assertions (not subdirectory)
 - [Phase 6-04]: 60+ types verified Send+Sync at compile time
 - [Phase 6-04]: Trybuild for compile-fail tests on private constructors
@@ -102,8 +105,8 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-01-24 09:36
-Stopped at: Completed 06-04-PLAN.md
+Last session: 2026-01-24 09:41
+Stopped at: Completed 06-02-PLAN.md (proptest invariants)
 Resume file: None
 
 ---
