@@ -19,7 +19,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 5: Trait Definitions** - Define capability boundary traits
 - [x] **Phase 6: Testing Infrastructure** - Property-based and snapshot tests
 - [x] **Phase 7: Documentation** - BOUNDARY.md, module docs
-- [ ] **Phase 8: Stabilization** - Final cleanup and validation
+- [x] **Phase 8: Stabilization** - Final cleanup and validation
 
 ## Phase Details
 
@@ -150,8 +150,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 08-01-PLAN.md — Fix doc warnings, resolve cargo-deny hex policy, verify build checks
-- [ ] 08-02-PLAN.md — Create MILESTONE-VERIFICATION.md with requirement traceability
+- [x] 08-01-PLAN.md — Fix doc warnings, resolve cargo-deny hex policy, verify build checks
+- [x] 08-02-PLAN.md — Create MILESTONE-VERIFICATION.md with requirement traceability
 
 ## Progress
 
@@ -167,7 +167,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | 5. Trait Definitions | 3/3 | Complete | 2026-01-24 |
 | 6. Testing Infrastructure | 5/5 | Complete | 2026-01-24 |
 | 7. Documentation | 2/2 | Complete | 2026-01-24 |
-| 8. Stabilization | 0/2 | Not started | - |
+| 8. Stabilization | 2/2 | Complete | 2026-01-24 |
 
 ## Requirement Coverage
 
