@@ -1,6 +1,7 @@
 # Architecture Overview
 
-This repo demonstrates a **hands‑on** deployment for multi‑dimensional access decisions with an edge-friendly policy engine.
+This component provides a **Policy Gate** for Converge: a deterministic PDP that
+evaluates authority and policy constraints as explicit, auditable facts.
 
 ## Components
 
@@ -27,6 +28,7 @@ This repo demonstrates a **hands‑on** deployment for multi‑dimensional acces
 - Push **data** (short‑lived, signed capability) instead of pushing rules.
 - Keep a **static**, human‑readable **policy** for general eligibility.
 - Use Redis for **tiny contextual memory** (recent event), avoiding DB joins on the hot path.
+ - Fit cleanly into Converge gates: **Policy/Authority Gate** and **Commit Gate**.
 
 ## Run it
 

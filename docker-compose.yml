@@ -2,7 +2,7 @@ version: "3.9"
 services:
   redis:
     image: redis:7-alpine
-    container_name: access-redis
+    container_name: converge-policy-redis
     command: ["redis-server", "--appendonly", "yes"]
     ports:
       - "6379:6379"
@@ -13,7 +13,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: access-pdp
+    container_name: converge-policy-pdp
     depends_on:
       - redis
     environment:

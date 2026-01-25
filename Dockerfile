@@ -1,5 +1,5 @@
 # Multi-stage build for tiny Rust Axum service
-FROM rustlang/rust:nightly-slim as builder
+FROM rust:1.76-slim as builder
 
 WORKDIR /app
 # Cache deps
@@ -14,9 +14,9 @@ RUN cargo build --release
 FROM debian:stable-slim
 RUN useradd -m appuser
 WORKDIR /app
-COPY --from=builder /app/target/release/pdp-cedar /app/pdp-cedar
+COPY --from=builder /app/target/release/converge-policy /app/converge-policy
 COPY --from=builder /app/policies /app/policies
 ENV REDIS_URL=redis://redis:6379
 EXPOSE 8080
 USER appuser
-ENTRYPOINT ["/app/pdp-cedar"]
+ENTRYPOINT ["/app/converge-policy"]
