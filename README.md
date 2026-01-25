@@ -1,21 +1,113 @@
 # Converge
 
-**Semantic Governance & Alignment for AI-Powered Decision Systems**
+**A Business Operating System for Responsible Commitment**
 
-> Converge is a vision for **semantic governance**. We move from fragmented intent to unified, converged states through a deterministic alignment engine. Our mission is to provide a stable foundation for complex decision-making where human authority and AI agency coexist in a transparent, explainable ecosystem.
+> Converge is not "AI for tasks." It is an operating system for business commitments. Businesses do not win because a model completes a task; they win because they make reliable commitments under uncertainty—and those commitments survive time, personnel changes, audits, and stress.
 
 ---
 
-## What is Converge?
+## The Thesis
 
-Converge is an **Agent OS** - an operating system for AI agents that provides:
+The core unit of value is a **commitment**: a quote that binds commercial terms, a contract that creates obligations, an invoice that asserts a claim, a hiring decision that creates legal and financial duties. These are not just artifacts; they are institutional acts that need authority, traceability, and repeatability.
 
-- **Deterministic Convergence** - Agents reach stable, verifiable states through fixed-point iteration
-- **Invariant Enforcement** - Business rules and constraints are guaranteed, not hoped for
-- **Semantic Transparency** - Every decision is traceable, auditable, and explainable
-- **Human Authority** - AI agency operates within human-defined boundaries
+Converge exists to govern how those commitments are made.
 
-Unlike chatbots or prompt chains, Converge agents operate as a **governance layer** over business processes.
+That is why Converge measures progress by **ambiguity reduction**, not steps completed. A flow is successful when uncertainty collapses responsibly into a decision that is ownable, auditable, and operationally consistent across systems.
+
+**The business claim is clear**: Converge operationalizes responsible commitments under uncertainty, not clever text. It turns ambiguity into governed decisions through structured doubt, explicit phases, and gate-based promotion.
+
+This is why "why not just use OpenAI?" is a category error: models generate proposals; businesses require **promotion semantics**—proposal → validated → committed—under explicit authority and policy gates.
+
+---
+
+## Converge as Institutional Design
+
+Converge is institutional design expressed as software. It treats the business as a commitment system, not a queue of tasks.
+
+The platform shift follows enterprise history:
+- **SAP** operationalized transactions
+- **Salesforce** operationalized configurable workflows
+- **Converge** operationalizes responsible commitments under uncertainty
+
+The differentiation is not "smarter models." It is **institutional reliability**:
+
+| Question | Converge Answer |
+|----------|-----------------|
+| Who can authorize this commitment? | Authority roles: Advisory, Supervisory, Participatory, Sovereign |
+| Which constraints are binding? | Invariants checked before commitment |
+| What tension must be surfaced? | Tension phase is required work, not dysfunction |
+| What counts as converged enough? | Explicit stopping rules, not model confidence |
+| Can we replay and audit later? | Full decision trail in converge-ledger |
+| Can this adapt to company logic? | Flow taxonomy and gate selection |
+
+---
+
+## Academic Backbone
+
+The positioning is not a brand posture; it is aligned with research on how organizations actually decide and survive.
+
+### Bounded Rationality (Herbert Simon)
+Organizations do not optimize globally; they **satisfice** under constraints of time, attention, and information. Converge is a procedure designer: it structures how evidence, constraints, and authority collapse into commitment.
+
+### Wicked Problems (Rittel & Webber)
+Many business decisions have no definitive formulation and no true/false outcome. The stopping point is a governance decision. Converge makes **stopping rules explicit and first-class**.
+
+### Decision Psychology (Kahneman, Janis)
+Humans converge too early; groups suppress tension to preserve cohesion. Converge encodes a **tension phase as required work**, not dysfunction, and treats dissent as an institutional artifact.
+
+### Institutional Economics (Coase, Ostrom)
+Firms exist because governance reduces transaction costs. Converge is **polycentric governance expressed as software**, where gates, authority, and audit are the institutional mechanism.
+
+### Uncertainty Typologies (Dewulf & Biesbroek)
+Uncertainty has natures (epistemic, ontological, ambiguity) and objects (substantive, strategic, institutional). Converge maps these to **gate selection and flow tuning**, preventing "everything is reasoning."
+
+---
+
+## Technical Mechanics
+
+The system encodes ambiguity collapse as typed transitions with explicit gates, not as "model confidence."
+
+### The Six Phases
+
+Every converging flow passes through:
+
+```
+Intent → Framing → Exploration → Tension → Convergence → Commitment
+```
+
+Skipping phases creates oscillation or brittleness. Each phase has explicit stop conditions.
+
+### Promotion Semantics
+
+Core invariant—proposals are not facts:
+
+```
+Observation → ProposedFact → Fact
+Draft → Validated → Fact
+CorrectionEvent for revisions, never silent edits
+```
+
+### Gate Primitives
+
+| Gate | Enforces |
+|------|----------|
+| Frame Gate | Intent and bounds |
+| Evidence Gate | Provenance |
+| Consistency Gate | Contradiction search |
+| Robustness Gate | Scenario tests |
+| Stakeholder Gate | Alignment |
+| Policy Gate | Compliance, budgets |
+| Optimization Gate | Feasibility/optimality |
+| Approval Gate | Human authority |
+
+### Human Roles as Authority
+
+| Role | Meaning |
+|------|---------|
+| Advisory | Can suggest, cannot commit |
+| Supervisory | Can approve within bounds |
+| Participatory | Part of human decision process |
+| Sovereign | Full autonomous authority (rare) |
 
 ---
 
@@ -54,145 +146,72 @@ Unlike chatbots or prompt chains, Converge agents operate as a **governance laye
 
 ---
 
-## Core Concepts
-
-### The Convergence Engine
-
-The engine runs agents in cycles until a **fixed point** is reached - no new facts are produced. This guarantees:
-
-- **Termination** - All runs eventually complete
-- **Stability** - Results don't depend on execution order
-- **Monotonicity** - Facts accumulate, never conflict
-
-### Agents
-
-Agents are pure functions: `Context → Vec<Fact>`. They:
-- Read from a shared, immutable context
-- Produce new facts (or none)
-- Have no side effects during computation
-
-### Invariants
-
-Invariants are rules that must hold before convergence is accepted:
-- `RequireMultipleStrategies` - Don't converge with a single option
-- `BrandSafetyInvariant` - Block outputs violating brand guidelines
-- Custom invariants for any business rule
-
-### Facts & Context
-
-Facts are immutable, typed records:
-```rust
-Fact {
-    key: ContextKey::Strategies,
-    id: "strategy:growth:aggressive",
-    content: "Expand market share through pricing competition",
-}
-```
-
-The Context is a append-only store organized by semantic keys.
-
----
-
 ## Component Repositories
 
-All component repositories are **private**. To request access for evaluation or collaboration, please contact the author.
+All component repositories are **private**. Each implements a specific part of the commitment operating system.
 
 ### Core Platform
 
-| Repository | Description | Language |
-|------------|-------------|----------|
-| **converge-core** | Engine, agents, invariants, and core types | Rust |
-| **converge-domain** | Business domain models (growth strategy, etc.) | Rust |
-| **converge-provider** | LLM backend implementations (Anthropic, OpenAI) | Rust |
-| **converge-llm** | Reasoning kernel with prompt contracts | Rust |
+| Repository | Summary |
+|------------|---------|
+| [**converge-core**](docs/components/converge-core.md) | The deterministic convergence engine. Runs agents in cycles until fixed-point, enforces invariants before commitment. The foundation everything else builds on. |
+| [**converge-domain**](docs/components/converge-domain.md) | Business domain models—agents, invariants, and fact types for growth strategy, SDR pipeline, quote-to-close. Where institutional knowledge becomes enforcement code. |
+| [**converge-provider**](docs/components/converge-provider.md) | LLM backend implementations for Anthropic, OpenAI, and others. Abstracts vendor APIs behind the ChatProvider trait. Models are interchangeable; governance is not. |
+| [**converge-llm**](docs/components/converge-llm.md) | The reasoning kernel. Prompt contracts, reproducibility envelopes, output validation. Makes LLM reasoning auditable, versioned, and bounded—not an oracle, a governed subprocess. |
 
 ### Runtime & Distribution
 
-| Repository | Description | Language |
-|------------|-------------|----------|
-| **converge-runtime** | HTTP, gRPC, and SSE server | Rust |
-| **converge-application** | CLI and domain packs | Rust |
-| **converge-optimization** | OR-Tools based constraint optimization | Rust/C++ |
+| Repository | Summary |
+|------------|---------|
+| [**converge-runtime**](docs/components/converge-runtime.md) | HTTP, gRPC, and SSE server. Exposes the engine as network services—submit jobs, stream progress, query results. Makes Converge deployable as infrastructure. |
+| [**converge-application**](docs/components/converge-application.md) | The user-facing CLI and domain packs. What you install and run. Packages everything into `converge serve` and `converge run` with built-in eval framework. |
+| [**converge-optimization**](docs/components/converge-optimization.md) | CP-SAT/MILP constraint optimization via OR-Tools. For problems where reasoning fails: scheduling, allocation, routing. Used only behind an Optimization Gate when justified. |
 
 ### Mobile & Web
 
-| Repository | Description | Language |
-|------------|-------------|----------|
-| **converge-ios** | iOS SDK and sample apps | Swift |
-| **converge-android** | Android SDK and sample apps | Kotlin |
-| **converge-www** | Website and documentation (converge.zone) | TypeScript |
+| Repository | Summary |
+|------------|---------|
+| [**converge-ios**](docs/components/converge-ios.md) | Native Swift SDK for iOS. Async/await, Combine, offline queuing, Keychain storage. Brings full governance to mobile approval workflows. |
+| [**converge-android**](docs/components/converge-android.md) | Native Kotlin SDK for Android. Coroutines, Flow, Room persistence, WorkManager sync. Enterprise mobile with the same governance guarantees. |
+| [**converge-www**](docs/components/converge-www.md) | The converge.zone website. Documentation, examples, API reference. The public face of the platform. |
 
-### Experimental & Tools
+### Infrastructure & Tools
 
-| Repository | Description | Language |
-|------------|-------------|----------|
-| **converge-analytics** | Polars-based data analysis | Rust |
-| **converge-personas** | AI persona definitions | YAML/Rust |
-| **converge-ledger** | Immutable audit logging | Rust |
-| **converge-remote** | Remote execution infrastructure | Rust |
-| **converge-tool** | CLI tooling and utilities | Rust |
+| Repository | Summary |
+|------------|---------|
+| [**converge-analytics**](docs/components/converge-analytics.md) | Polars-based data analysis. Computes metrics, detects patterns, prepares structured data for reasoning. Evidence for the Evidence Gate. |
+| [**converge-ledger**](docs/components/converge-ledger.md) | Immutable audit log. Every fact, gate, and commitment recorded. Tamper-evident, replayable, compliant. Audit by construction, not afterthought. |
+| [**converge-personas**](docs/components/converge-personas.md) | AI persona definitions. Not personalities—governance configs. Authority levels, constraints, policy bindings. Makes "the AI said" into "the Strategic Analyst agent, under Policy v2.3, said." |
+| [**converge-remote**](docs/components/converge-remote.md) | Remote execution infrastructure. Distribute flows across cloud functions, edge nodes, worker pools. Scale without compromising governance. |
+| [**converge-tool**](docs/components/converge-tool.md) | CLI utilities for operators. Inspect contexts, validate flows, test agents, manage config. Makes the system observable, not a black box. |
 
 ### Business & Strategy
 
-| Repository | Description |
-|------------|-------------|
-| **converge-business** | Business documentation, knowledgebase, strategy |
+| Repository | Summary |
+|------------|---------|
+| [**converge-business**](docs/components/converge-business.md) | Business documentation—knowledgebase, strategy, ADRs, collaboration guides. The "why" behind the "what." Institutional design in documentation form. |
 
 ---
 
-## Technology Stack
+## Flow Examples
 
-### Rust Core
+### Quote-to-Close
 
-| Crate | Purpose |
-|-------|---------|
-| `tokio` | Async runtime |
-| `axum` | HTTP framework |
-| `tonic` / `prost` | gRPC support |
-| `serde` / `serde_json` | Serialization |
-| `thiserror` | Error handling |
-| `tracing` | Structured logging |
-| `rayon` | Parallel computation |
-| `proptest` | Property-based testing |
-| `burn` | ML/deep learning |
-| `polars` | DataFrames |
+A convergence machine, not a document generator:
+- Enforces pricing constraints
+- Routes approvals by authority level
+- Matches invoices to quotes
+- Records learning loop
 
-### Development Tools
+### Governance Gates
 
-- **[Claude Code](https://claude.ai/claude-code)** - Primary development tool
-- **[Cursor](https://cursor.com)** - AI-powered IDE
-- **[Jujutsu (jj)](https://github.com/martinvonz/jj)** - Git-compatible VCS
+Institutional proof—policy as code:
+- Approvals as automation
+- Budget enforcement
+- Compliance checks
+- Audit by construction
 
----
-
-## Use Cases
-
-### Growth Strategy Generation
-
-Given seed facts about a company (market, size, competitive position), Converge:
-1. Gathers market signals
-2. Analyzes competitors
-3. Generates multiple strategies
-4. Evaluates each with rationale
-5. Produces a ranked recommendation
-
-All while enforcing brand safety, requiring diversity of options, and ensuring explainability.
-
-### Patent Prior Art Search
-
-Given an invention disclosure, Converge:
-1. Builds structured search queries
-2. Searches multiple patent databases
-3. Collects and ranks relevant prior art
-4. Produces a shortlist with evidence
-
-### SDR Pipeline Automation
-
-For sales development, Converge:
-1. Ingests lead data
-2. Qualifies based on ICP
-3. Generates personalized outreach
-4. Tracks engagement and iterates
+Together they show the thesis: **commitment promotion is the product, not the text.**
 
 ---
 
@@ -208,9 +227,30 @@ converge serve
 # Run a job
 converge run --template growth-strategy --seeds @seeds.json
 
-# List available templates
+# List templates
 converge list-templates
 ```
+
+---
+
+## The Final Positioning
+
+Converge is a **business operating system for responsible commitment**. It does not compete with foundation models; it governs them.
+
+- Models produce proposals
+- Converge governs promotion into commitment
+- Through explicit phases, gates, authority, and audit
+
+This is why Converge remains defensible even as models improve: **institutions still need rules, enforcement, and traceability.**
+
+The ultimate claim is measurable:
+- Reduce ambiguity
+- Reduce leakage
+- Reduce disputes
+- Speed approvals
+- Enforce policy
+
+Across tools and across time. That is the business operating system view, backed by academic grounding and implemented as a technical enforcement layer.
 
 ---
 
@@ -244,4 +284,4 @@ kenneth@aprio.one
 
 ---
 
-*Built with Rust. Powered by determination.*
+*Institutional design expressed as software.*
