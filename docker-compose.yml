@@ -1,0 +1,28 @@
+version: "3.9"
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: access-redis
+    command: ["redis-server", "--appendonly", "yes"]
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+
+  pdp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: access-pdp
+    depends_on:
+      - redis
+    environment:
+      - REDIS_URL=redis://redis:6379
+    ports:
+      - "8080:8080"
+    volumes:
+      # Hot-reload policies without rebuilding image
+      - ./rust-pdp-cedar/policies:/app/policies:ro
+
+volumes:
+  redis-data:

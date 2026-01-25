@@ -1,0 +1,35 @@
+{
+  "principal": {
+    "id": "user:ch_42",
+    "profiles": [
+      {
+        "id": "ap:1001",
+        "vf_min": 710,
+        "vt_min": 800
+      }
+    ]
+  },
+  "resource": {
+    "id": "apoint:A-17",
+    "area_id": "area:WestWing"
+  },
+  "context": {
+    "now_min": 725,
+    "allowed_schedule_ids": [
+      "sched:weekday_9_17",
+      "sched:lunch_12_13"
+    ],
+    "required_modifier": "standard",
+    "policies": [
+      {
+        "profile_id": "ap:1001",
+        "area_id": "area:WestWing",
+        "schedule_id": "sched:lunch_12_13",
+        "modifiers": [
+          "standard",
+          "escort"
+        ]
+      }
+    ]
+  }
+}
