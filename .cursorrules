@@ -1,0 +1,9 @@
+# Cursor Rules (Repo-Level)
+
+- Treat SSE boxing as a runtime adapter trade-off, not a core design flaw.
+- Keep trait objects confined to plugin/registry boundaries where types are
+  unknown at compile time.
+- Prefer zero-cost, statically typed design in converge-core; allow boxing in
+  converge-runtime only when it simplifies transport adapters.
+- `Box<dyn StreamingCallback>` is preferred when single-owner; use `Arc` only
+  for shared callbacks.

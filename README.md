@@ -1,10 +1,29 @@
-# Converge
+# Converge Zone
 
 **A Business Operating System for Responsible Commitment**
 
 > Converge is not "AI for tasks." It is an operating system for business commitments. Businesses do not win because a model completes a task; they win because they make reliable commitments under uncertainty—and those commitments survive time, personnel changes, audits, and stress.
 
 ---
+
+## Public View
+
+This repo is the public view into Converge Zone. We are a serious initiative,
+but we are intentionally operating under cover while we validate core flows and
+harden the foundations. If you want to engage, see `PARTNERSHIPS.md`.
+
+We expose:
+
+- `README.md` (this file)
+- `AGENTS.md`
+- `LICENSE`
+- `BUSINESS_STORYTELLING.md`
+- `TECH_STACK_STORYTELLING.md`
+- `PARTNERSHIPS.md`
+
+Positioning in one line: Converge Zone is the SAP and Salesforce of the AI 2026
+era — the layer that operationalizes responsible commitments under uncertainty,
+not just configurable workflows or task automation.
 
 ## The Thesis
 
