@@ -1,1 +1,0 @@
-{"rustc":12211934750107851607,"features":"","declared_features":"","target":0,"profile":0,"path":0,"deps":[[4682624821976634217,"build_script_build",false,13710120613253354044]],"local":[{"RerunIfChanged":{"output":"debug/build/ortools-sys-ad1638dc217e1b0e/output","paths":["build.rs","wrapper.h","wrapper.cc"]}}],"rustflags":[],"config":0,"compile_kind":0}

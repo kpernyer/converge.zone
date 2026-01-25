@@ -1,1 +1,0 @@
- -DMPFR=OFF -DREADLINE=off -DGMP=off -DPAPILO=off -DZIMPL=off -DAMPL=off -DIPOPT=off -DTPI=tny -DEXPRINT=none -DSYM=none

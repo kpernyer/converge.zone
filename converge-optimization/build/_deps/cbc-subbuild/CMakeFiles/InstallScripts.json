@@ -1,7 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/Users/kpernyer/repo/converge.zone/converge-optimization/build/_deps/cbc-subbuild/cmake_install.cmake"
-	],
-	"Parallel" : false
-}

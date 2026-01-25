@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../../../lib/libmath_opt_matchers.a CMakeFiles/math_opt_matchers.dir/matchers.cc.o
-/usr/bin/ranlib ../../../lib/libmath_opt_matchers.a

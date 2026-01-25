@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../../../lib/libmath_opt_base_solver_test.a CMakeFiles/math_opt_base_solver_test.dir/base_solver_test.cc.o
-/usr/bin/ranlib ../../../lib/libmath_opt_base_solver_test.a

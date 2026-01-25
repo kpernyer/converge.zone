@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../../../lib/libmath_opt_elemental_matcher.a CMakeFiles/math_opt_elemental_matcher.dir/elemental_matcher.cc.o
-/usr/bin/ranlib ../../../lib/libmath_opt_elemental_matcher.a

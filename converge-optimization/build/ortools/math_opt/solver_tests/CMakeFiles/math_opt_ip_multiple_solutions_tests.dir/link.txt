@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../../../lib/libmath_opt_ip_multiple_solutions_tests.a CMakeFiles/math_opt_ip_multiple_solutions_tests.dir/ip_multiple_solutions_tests.cc.o
-/usr/bin/ranlib ../../../lib/libmath_opt_ip_multiple_solutions_tests.a

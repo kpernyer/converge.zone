@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../../../lib/libmath_opt_multi_objective_tests.a CMakeFiles/math_opt_multi_objective_tests.dir/multi_objective_tests.cc.o
-/usr/bin/ranlib ../../../lib/libmath_opt_multi_objective_tests.a

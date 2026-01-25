@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../../../lib/libmath_opt_ip_model_solve_parameters_tests.a CMakeFiles/math_opt_ip_model_solve_parameters_tests.dir/ip_model_solve_parameters_tests.cc.o
-/usr/bin/ranlib ../../../lib/libmath_opt_ip_model_solve_parameters_tests.a

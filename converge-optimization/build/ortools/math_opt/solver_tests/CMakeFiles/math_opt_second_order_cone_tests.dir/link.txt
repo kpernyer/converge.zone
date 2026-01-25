@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../../../lib/libmath_opt_second_order_cone_tests.a CMakeFiles/math_opt_second_order_cone_tests.dir/second_order_cone_tests.cc.o
-/usr/bin/ranlib ../../../lib/libmath_opt_second_order_cone_tests.a

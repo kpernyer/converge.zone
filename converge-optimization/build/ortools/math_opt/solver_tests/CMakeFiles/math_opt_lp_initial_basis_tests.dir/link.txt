@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../../../lib/libmath_opt_lp_initial_basis_tests.a CMakeFiles/math_opt_lp_initial_basis_tests.dir/lp_initial_basis_tests.cc.o
-/usr/bin/ranlib ../../../lib/libmath_opt_lp_initial_basis_tests.a
