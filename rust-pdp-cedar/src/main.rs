@@ -1,10 +1,10 @@
 use axum::{
+    Json, Router,
     http::StatusCode,
     response::{IntoResponse, Response},
     routing::{get, post},
-    Json, Router,
 };
-use base64::{engine::general_purpose, Engine as _};
+use base64::{Engine as _, engine::general_purpose};
 use cedar_policy::{
     Authorizer, Context, Entities, EntityId, EntityTypeName, Policy, PolicySet, Request, Value,
 };
@@ -104,9 +104,9 @@ struct ContextIn {
 struct DecideReq {
     principal: PrincipalIn,
     resource: ResourceIn,
-    context: Option<ContextIn>,       // optional when using capability token path
-    observe: Option<bool>,            // if allowed, append event to Redis
-    capability_b64: Option<String>,   // optional compact capability token (CBOR bytes, base64)
+    context: Option<ContextIn>, // optional when using capability token path
+    observe: Option<bool>,      // if allowed, append event to Redis
+    capability_b64: Option<String>, // optional compact capability token (CBOR bytes, base64)
 }
 
 #[derive(Debug, Serialize)]
@@ -130,12 +130,12 @@ struct LastOpen {
 // Keep it small & explicit; encode as CBOR, transport as base64
 #[derive(Debug, Serialize, Deserialize, Clone)]
 struct Capability {
-    sub: String,          // user id
-    aud: String,          // lock/controller id
-    res: String,          // resource area/door id
-    act: String,          // "open"
-    nbf_epoch: i64,       // not-before epoch (seconds)
-    exp_epoch: i64,       // expires epoch (seconds)
+    sub: String,    // user id
+    aud: String,    // lock/controller id
+    res: String,    // resource area/door id
+    act: String,    // "open"
+    nbf_epoch: i64, // not-before epoch (seconds)
+    exp_epoch: i64, // expires epoch (seconds)
     booking_id: Option<String>,
     modifiers: Vec<String>,
     jti: String,          // nonce/id for replay protection
@@ -173,8 +173,7 @@ async fn main() -> Result<(), AppError> {
     let policy_text = fs::read_to_string("policies/policy.cedar")?;
     let policy =
         Policy::from_str("P1", &policy_text).map_err(|err| AppError::Policy(err.to_string()))?;
-    let ps = PolicySet::from_policies([policy])
-        .map_err(|err| AppError::Policy(err.to_string()))?;
+    let ps = PolicySet::from_policies([policy]).map_err(|err| AppError::Policy(err.to_string()))?;
     let auth = Authorizer::new();
 
     let signing_key = SigningKey::from_bytes(&rand::random::<[u8; 32]>());
@@ -216,12 +215,16 @@ async fn redis_conn(url: &str) -> Result<redis::aio::Connection, AppError> {
 async fn fetch_last_open(redis_url: &str, user_id: &str) -> Result<Option<LastOpen>, AppError> {
     let mut con = redis_conn(redis_url).await?;
     let key = format!("last:user:{user_id}");
-    let (door, time, lat, lon): (Option<String>, Option<String>, Option<String>, Option<String>) =
-        redis::cmd("HMGET")
-            .arg(&key)
-            .arg(&["door", "time", "lat", "lon"])
-            .query_async(&mut con)
-            .await?;
+    let (door, time, lat, lon): (
+        Option<String>,
+        Option<String>,
+        Option<String>,
+        Option<String>,
+    ) = redis::cmd("HMGET")
+        .arg(&key)
+        .arg(&["door", "time", "lat", "lon"])
+        .query_async(&mut con)
+        .await?;
     let time = time.unwrap_or_default();
     if time.is_empty() {
         return Ok(None);
@@ -229,12 +232,8 @@ async fn fetch_last_open(redis_url: &str, user_id: &str) -> Result<Option<LastOp
     Ok(Some(LastOpen {
         door: door.unwrap_or_default(),
         time_hhmm: time,
-        lat: lat
-            .and_then(|value| value.parse().ok())
-            .unwrap_or(0.0),
-        lon: lon
-            .and_then(|value| value.parse().ok())
-            .unwrap_or(0.0),
+        lat: lat.and_then(|value| value.parse().ok()).unwrap_or(0.0),
+        lon: lon.and_then(|value| value.parse().ok()).unwrap_or(0.0),
     }))
 }
 
@@ -315,14 +314,10 @@ async fn decide(
     };
 
     let mut ents = Entities::empty();
-    let p_eid = EntityId::from_type_name_and_id(
-        &EntityTypeName::from("User::User"),
-        &input.principal.id,
-    );
-    let r_eid = EntityId::from_type_name_and_id(
-        &EntityTypeName::from("Door::Door"),
-        &input.resource.id,
-    );
+    let p_eid =
+        EntityId::from_type_name_and_id(&EntityTypeName::from("User::User"), &input.principal.id);
+    let r_eid =
+        EntityId::from_type_name_and_id(&EntityTypeName::from("Door::Door"), &input.resource.id);
 
     let profiles_val = Value::set(
         input
@@ -386,12 +381,15 @@ async fn decide(
                     .collect(),
             ),
         ),
-        ("required_modifier".into(), Value::from(ctx.required_modifier)),
+        (
+            "required_modifier".into(),
+            Value::from(ctx.required_modifier),
+        ),
         ("policies".into(), policies_val),
     ]);
 
-    let context = Context::from_json_value(ctx_val)
-        .map_err(|err| AppError::Context(err.to_string()))?;
+    let context =
+        Context::from_json_value(ctx_val).map_err(|err| AppError::Context(err.to_string()))?;
 
     let action = "Action::\"open\""
         .parse()
@@ -401,10 +399,7 @@ async fn decide(
 
     let eval_res = state.auth.is_authorized(&rq, &state.policies, &ents);
     let allow = matches!(eval_res.decision, cedar_policy::Decision::Allow);
-    let reason = eval_res
-        .diagnostics
-        .reason
-        .map(|r| format!("{:?}", r));
+    let reason = eval_res.diagnostics.reason.map(|r| format!("{:?}", r));
 
     if allow && input.observe.unwrap_or(false) {
         if let Err(err) = append_event(
@@ -464,8 +459,7 @@ async fn issue_capability(
         jti: req.jti,
         sig: None,
     };
-    let msg =
-        capability_sig_message(&cap).map_err(|err| AppError::Capability(err.to_string()))?;
+    let msg = capability_sig_message(&cap).map_err(|err| AppError::Capability(err.to_string()))?;
     let sig: Signature = state.signing_key.sign(&msg);
     cap.sig = Some(sig.to_bytes().to_vec());
 
@@ -489,15 +483,13 @@ async fn pubkey(
     axum::extract::State(state): axum::extract::State<AppState>,
 ) -> Result<Json<PubKeyResp>, AppError> {
     let pub_b64 = general_purpose::STANDARD_NO_PAD.encode(state.verifying_key.to_bytes());
-    Ok(Json(PubKeyResp { pubkey_b64: pub_b64 }))
+    Ok(Json(PubKeyResp {
+        pubkey_b64: pub_b64,
+    }))
 }
 
 // Verify a capability and basic constraints
-fn verify_capability(
-    b64: &str,
-    vkey: &VerifyingKey,
-    req: &DecideReq,
-) -> Result<bool, String> {
+fn verify_capability(b64: &str, vkey: &VerifyingKey, req: &DecideReq) -> Result<bool, String> {
     let raw = general_purpose::STANDARD_NO_PAD
         .decode(b64)
         .map_err(|err| format!("capability decode failed: {err}"))?;
