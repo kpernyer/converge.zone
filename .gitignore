@@ -4,5 +4,8 @@ converge-optimization/build/
 # Planning artifacts (session-specific)
 .planning/phases/*/
 
+# Beads tracking
+.beads/
+
 # OS files
 .DS_Store
