@@ -201,6 +201,7 @@ All component repositories are **private**. Each implements a specific part of t
 | [**converge-analytics**](docs/components/converge-analytics.md) | Polars-based data analysis. Computes metrics, detects patterns, prepares structured data for reasoning. Evidence for the Evidence Gate. |
 | [**converge-ledger**](docs/components/converge-ledger.md) | Immutable audit log. Every fact, gate, and commitment recorded. Tamper-evident, replayable, compliant. Audit by construction, not afterthought. |
 | [**converge-personas**](docs/components/converge-personas.md) | AI persona definitions. Not personalities—governance configs. Authority levels, constraints, policy bindings. Makes "the AI said" into "the Strategic Analyst agent, under Policy v2.3, said." |
+| [**converge-policy**](docs/components/converge-policy.md) | Cedar-based policy decision point for Policy/Authority gates, with capability tokens for fast-path commitments. |
 | [**converge-remote**](docs/components/converge-remote.md) | Remote execution infrastructure. Distribute flows across cloud functions, edge nodes, worker pools. Scale without compromising governance. |
 | [**converge-tool**](docs/components/converge-tool.md) | CLI utilities for operators. Inspect contexts, validate flows, test agents, manage config. Makes the system observable, not a black box. |
 
