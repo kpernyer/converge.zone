@@ -12,6 +12,25 @@ bd close <id>         # Complete work
 bd sync               # Sync with git
 ```
 
+## Engineering Trade-offs (Reminder)
+
+### SSE boxing and trait objects
+
+SSE boxing is a boundary choice, not a core architecture choice. Converge-core
+optimizes for invariants, determinism, and compile-time guarantees. Converge-
+runtime's SSE layer is an I/O adapter where runtime polymorphism and uniform
+return types matter more than micro-allocations, and cost is dominated by
+network I/O. Boxing stays confined to the edge; core stays zero-cost and
+statically typed.
+
+Decision principle: use trait objects only where runtime polymorphism is
+required, for plugin/registry patterns where types are not known at compile
+time. SSE is one of those places.
+
+Ownership note: `Option<Box<dyn StreamingCallback>>` is better when there is
+single ownership and no sharing. `Option<Arc<dyn StreamingCallback>>` is correct
+when the callback must be shared across tasks or cloned into concurrent streams.
+
 ## Landing the Plane (Session Completion)
 
 **When ending a work session**, you MUST complete ALL steps below. Work is NOT complete until `git push` succeeds.
