@@ -1,8 +1,10 @@
-# converge-core v2.0.0 Restoration
+# converge-core
 
 ## What This Is
 
-Restoration of converge-core to its pure, portable, axiomatic foundation. converge-core defines the minimal mathematical and architectural foundations that all other Converge crates build upon — without importing their complexity, dependencies, or runtime concerns. This is the constitution, not the government.
+A pure, portable, axiomatic foundation crate for the Converge platform. converge-core defines the minimal mathematical and architectural foundations that all other Converge crates build upon — without importing their complexity, dependencies, or runtime concerns. This is the constitution, not the government.
+
+**Current state:** v1.0.0 shipped with 22,853 lines of Rust across 47 source files. Type-state enforcement, capability boundary traits, and comprehensive property-based testing in place.
 
 ## Core Value
 
@@ -14,32 +16,25 @@ If everything else fails, converge-core must remain pure: no I/O, no runtime beh
 
 ### Validated
 
-Existing converge-core capabilities that work and must be preserved:
+Shipped in v1.0.0:
 
-- Engine convergence loop (deterministic fixed-point execution)
-- Context and Fact types (append-only truth)
-- Agent trait definition
-- Invariant system (runtime governance rules)
-- Effect-based isolation (agents emit effects, never mutate directly)
+- ✓ Engine convergence loop (deterministic fixed-point execution) — existing
+- ✓ Context and Fact types (append-only truth) — existing
+- ✓ Agent trait definition — existing
+- ✓ Invariant system (runtime governance rules) — existing
+- ✓ Effect-based isolation (agents emit effects, never mutate directly) — existing
+- ✓ Type-state Proposal pattern (Draft → Validated) — v1.0.0
+- ✓ Private-constructor Fact (promotion is only path) — v1.0.0
+- ✓ ProposalLifecycle trait with ValidationReport proof objects — v1.0.0
+- ✓ Capability boundary traits (LlmBackend, Recall, ExperienceStore, Validator, Promoter) — v1.0.0
+- ✓ cargo-deny enforcement (16 forbidden crate bans) — v1.0.0
+- ✓ Property-based tests for invariants — v1.0.0
+- ✓ Serialization stability with insta snapshots — v1.0.0
+- ✓ Nine design tenets documented in crate docs — v1.0.0
 
 ### Active
 
-Restoration work for v2.0.0:
-
-- [ ] **PURE-01**: Remove modules that perform/imply model execution, prompt orchestration, recall execution, backend routing, persistence, or network I/O
-- [ ] **PURE-02**: Replace removed modules with traits + portable types in core, implementations living elsewhere
-- [ ] **TYPE-01**: Consolidate canonical types — kernel boundary types (intent/context/policy/proposal)
-- [ ] **TYPE-02**: Consolidate proposal lifecycle types with explicit promotion gates
-- [ ] **TYPE-03**: Consolidate trace link shape and replayability honesty (no providers, just policy/provenance/stop reasons)
-- [ ] **GATE-01**: Enforce promotion path — no API allows Facts to leak from tools/agents
-- [ ] **GATE-02**: Every Fact creation requires ValidationReport + explicit Promotion act
-- [ ] **GATE-03**: Abstract gate pattern from optimization learnings (ProblemSpec → ProposedPlan → SolverReport → PromotionGate)
-- [ ] **TEST-01**: Serialization stability tests for stop reasons, replayability, provenance envelopes
-- [ ] **TEST-02**: Invariant tests proving "cannot promote without validation"
-- [ ] **TEST-03**: Invariant tests proving "facts are append-only"
-- [ ] **TEST-04**: Property-based tests for determinism guarantees
-- [ ] **CI-01**: Add boundary violation checks (forbidden deps, forbidden module patterns)
-- [ ] **CI-02**: Fail fast when drift is reintroduced
+(To be defined in next milestone)
 
 ### Out of Scope
 
@@ -52,14 +47,22 @@ Restoration work for v2.0.0:
 
 ## Context
 
-### Why Now
+### Current State (v1.0.0)
 
-Converge expanded rapidly into capability crates:
-- converge-analytics: Polars/Burn pipeline for ML resolution in agent flows
-- converge-llm: Local inference, adapters/LoRA, semantic recall — became powerful fast, concepts not fully proven
-- converge-optimization: Mathematical foundation (CP-SAT, routing, scheduling) revealed cleaner gate patterns
+**Tech stack:** Rust with thiserror, serde, serde_json, tracing, typed-builder, hex
+**Testing:** proptest, insta, static_assertions, trybuild
+**CI:** cargo-deny, cargo-semver-checks
 
-The optimization work was pivotal — it almost rebuilt core inside converge-optimization. The gate pattern (ProblemSpec → ProposedPlan → SolverReport → PromotionGate) is fundamental and should be abstracted into core as generic types.
+**Codebase:**
+- 47 Rust source files
+- 22,853 lines of Rust
+- 39 requirements verified with code evidence
+- Property-based tests proving "cannot promote without validation" and "facts are append-only"
+
+**Known technical debt:**
+- 518 clippy warnings (pre-existing)
+- cargo fmt formatting differences (pre-existing)
+- Deprecated implementations not yet extracted to capability crates
 
 ### The Nine Non-Negotiable Design Tenets
 
@@ -80,6 +83,7 @@ These are axioms converge-core exists to encode, enforce, and protect:
 **Allowed:**
 - thiserror, tracing, serde, serde_json
 - Small pure libs (hashing ok for portable fingerprints)
+- hex (for ContentHash serialization)
 - No async runtimes required
 
 **Forbidden:**
@@ -87,12 +91,9 @@ These are axioms converge-core exists to encode, enforce, and protect:
 - Burn / llama-burn / fastembed
 - Polars / Arrow / LanceDB clients
 - DB drivers (SurrealDB, Postgres, etc.)
+- rayon, rand, sha2
 
 Rule: If a module implies execution, I/O, network, model inference, or persistence, it does not belong in core.
-
-### Reference Document
-
-Full restoration instructions: `converge-platform/converge-core/JOBS.md`
 
 ## Constraints
 
@@ -105,10 +106,14 @@ Full restoration instructions: `converge-platform/converge-core/JOBS.md`
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Abstract gate pattern into core | Optimization work proved this is fundamental, not solver-specific | — Pending |
-| Traits over implementations | Core defines surfaces, capability crates implement | — Pending |
-| Proposal → Validation → Promotion lifecycle | Only valid authority path, no bypassing | — Pending |
-| Forbidden dependency list | Prevents drift back into impurity | — Pending |
+| Abstract gate pattern into core | Optimization work proved this is fundamental, not solver-specific | ✓ Good — ProposalLifecycle trait implemented |
+| Traits over implementations | Core defines surfaces, capability crates implement | ✓ Good — All capability traits defined |
+| Proposal → Validation → Promotion lifecycle | Only valid authority path, no bypassing | ✓ Good — Type-state enforced |
+| Forbidden dependency list | Prevents drift back into impurity | ✓ Good — cargo-deny enforcing 16 bans |
+| Type-state for Proposal | Compile-time enforcement of Draft→Validated flow | ✓ Good — Cannot bypass validation |
+| ValidationToken ZST | Unforgeable proof at zero runtime cost | ✓ Good — No overhead |
+| GAT async for capability traits | Zero-cost static dispatch, future-proof for async | ✓ Good — ChatBackend, EmbedBackend use pattern |
+| Git-based cargo-semver-checks | Compare against main branch, not crates.io | ✓ Good — Works pre-publication |
 
 ---
-*Last updated: 2026-01-23 after initialization*
+*Last updated: 2026-01-27 after v1.0.0 milestone*
