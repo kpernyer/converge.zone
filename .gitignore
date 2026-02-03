@@ -4,6 +4,9 @@ converge-optimization/build/
 # Planning artifacts (session-specific)
 .planning/phases/*/
 
+# Governance artifacts (local findings, acks, etc.)
+.converge/
+
 # Beads tracking
 .beads/
 
