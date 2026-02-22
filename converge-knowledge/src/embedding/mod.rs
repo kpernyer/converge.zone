@@ -1,12 +1,33 @@
 //! Embedding generation for text vectorization.
 //!
 //! Supports multiple embedding backends:
-//! - Hash-based (default, for testing)
-//! - OpenAI API (production)
+//! - Hash-based (default, for testing and offline use)
+//! - OpenAI API (production, high-quality embeddings)
+//!
+//! # Choosing a Backend
+//!
+//! | Backend | Quality | Speed | Cost | Offline |
+//! |---------|---------|-------|------|---------|
+//! | Hash    | Low     | Fast  | Free | Yes     |
+//! | OpenAI  | High    | Medium| Paid | No      |
+//!
+//! # Example
+//! ```ignore
+//! use converge_knowledge::embedding::EmbeddingEngine;
+//!
+//! // Development/testing: use hash embeddings
+//! let engine = EmbeddingEngine::new(256);
+//!
+//! // Production: use OpenAI (reads OPENAI_API_KEY)
+//! let engine = EmbeddingEngine::from_env()?;
+//!
+//! // Production with explicit key
+//! let engine = EmbeddingEngine::with_openai("sk-...", None);
+//! ```
 
 mod openai;
 
-pub use openai::OpenAIEmbedding;
+pub use openai::{OpenAIConfig, OpenAIEmbedding, OpenAIModel, UsageSnapshot, UsageStats};
 
 use crate::error::{Error, Result};
 use std::collections::hash_map::DefaultHasher;
@@ -40,16 +61,51 @@ pub struct EmbeddingEngine {
 
 impl EmbeddingEngine {
     /// Create a new embedding engine with hash-based embeddings.
+    ///
+    /// Use this for development, testing, or offline scenarios.
+    /// Hash embeddings are fast and free but lower quality.
     pub fn new(dimensions: usize) -> Self {
         Self {
             provider: Box::new(HashEmbedding::new(dimensions)),
         }
     }
 
+    /// Create from environment variables.
+    ///
+    /// Reads OPENAI_API_KEY. Falls back to hash embeddings if not set.
+    pub fn from_env() -> Self {
+        match OpenAIEmbedding::from_env() {
+            Ok(provider) => Self {
+                provider: Box::new(provider),
+            },
+            Err(_) => {
+                tracing::warn!(
+                    "OPENAI_API_KEY not set, falling back to hash embeddings"
+                );
+                Self::new(1536) // Match OpenAI default dimensions
+            }
+        }
+    }
+
+    /// Create from environment, returning error if not configured.
+    pub fn from_env_required() -> Result<Self> {
+        let provider = OpenAIEmbedding::from_env()?;
+        Ok(Self {
+            provider: Box::new(provider),
+        })
+    }
+
     /// Create with OpenAI embeddings.
     pub fn with_openai(api_key: impl Into<String>, model: Option<String>) -> Self {
         Self {
             provider: Box::new(OpenAIEmbedding::new(api_key, model)),
+        }
+    }
+
+    /// Create with OpenAI using custom configuration.
+    pub fn with_openai_config(api_key: impl Into<String>, config: OpenAIConfig) -> Self {
+        Self {
+            provider: Box::new(OpenAIEmbedding::with_config(api_key, config)),
         }
     }
 
