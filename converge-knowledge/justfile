@@ -1,0 +1,173 @@
+# Converge Knowledge Justfile
+# Self-learning knowledge base with gRPC and MCP interfaces
+
+set shell := ["bash", "-cu"]
+
+# Default recipe
+default:
+    @just --list
+
+# Build all targets
+build:
+    cargo build --release
+
+# Build with all features
+build-all:
+    cargo build --release --all-features
+
+# Run tests
+test:
+    cargo test
+
+# Run tests with coverage
+test-coverage:
+    cargo llvm-cov --html
+
+# Run clippy lints
+lint:
+    cargo clippy --all-targets --all-features -- -D warnings
+
+# Format code
+fmt:
+    cargo fmt
+
+# Check formatting
+fmt-check:
+    cargo fmt -- --check
+
+# Generate protobuf code
+proto:
+    cargo build --features grpc
+
+# Clean build artifacts
+clean:
+    cargo clean
+
+# Run the gRPC server
+server *ARGS:
+    cargo run --release --bin converge-knowledge-server -- {{ARGS}}
+
+# Run the gRPC server with verbose logging
+server-dev:
+    cargo run --bin converge-knowledge-server -- --verbose
+
+# Run the MCP server (stdio mode for Claude Desktop)
+mcp:
+    cargo run --release --bin converge-knowledge-mcp
+
+# Run the MCP server in HTTP mode
+mcp-http port="8080":
+    cargo run --release --bin converge-knowledge-mcp -- --transport http --address 127.0.0.1:{{port}}
+
+# Run the CLI
+cli *ARGS:
+    cargo run --release --bin converge-knowledge -- {{ARGS}}
+
+# Add a knowledge entry via CLI
+add title content:
+    cargo run --release --bin converge-knowledge -- add --title "{{title}}" --content "{{content}}"
+
+# Search the knowledge base via CLI
+search query limit="5":
+    cargo run --release --bin converge-knowledge -- search "{{query}}" --limit {{limit}}
+
+# Get entry by ID via CLI
+get id:
+    cargo run --release --bin converge-knowledge -- get {{id}}
+
+# Get server stats via CLI
+stats:
+    cargo run --release --bin converge-knowledge -- stats
+
+# Health check via CLI
+health:
+    cargo run --release --bin converge-knowledge -- health
+
+# Run all checks (lint, test, fmt)
+check: lint test fmt-check
+
+# Generate documentation
+doc:
+    cargo doc --no-deps --open
+
+# Install locally
+install:
+    cargo install --path .
+
+# Uninstall
+uninstall:
+    cargo uninstall converge-knowledge
+
+# Run benchmarks
+bench:
+    cargo bench
+
+# Watch for changes and rebuild
+watch:
+    cargo watch -x build
+
+# Watch and run tests
+watch-test:
+    cargo watch -x test
+
+# Create a release build
+release:
+    cargo build --release
+    @echo "Release binaries:"
+    @ls -la target/release/converge-knowledge*
+
+# Generate Claude Desktop MCP configuration
+mcp-config:
+    @echo '{'
+    @echo '  "mcpServers": {'
+    @echo '    "converge-knowledge": {'
+    @echo '      "command": "'$(pwd)'/target/release/converge-knowledge-mcp",'
+    @echo '      "args": ["--storage", "'$(pwd)'/knowledge.db"]'
+    @echo '    }'
+    @echo '  }'
+    @echo '}'
+
+# Print example Claude Desktop config location
+mcp-install-hint:
+    @echo "To use with Claude Desktop, add this to your config:"
+    @echo ""
+    @echo "macOS: ~/Library/Application Support/Claude/claude_desktop_config.json"
+    @echo "Windows: %APPDATA%\\Claude\\claude_desktop_config.json"
+    @echo ""
+    @just mcp-config
+
+# Start development environment (server + watch)
+dev:
+    @echo "Starting development environment..."
+    @echo "Run 'just server-dev' in one terminal"
+    @echo "Run 'just watch' in another terminal"
+
+# Demo: populate with sample data
+demo-populate:
+    @echo "Populating with sample knowledge entries..."
+    cargo run --release --bin converge-knowledge -- add \
+        --title "Rust Ownership" \
+        --content "Rust's ownership system ensures memory safety without garbage collection. Each value has a single owner, and when the owner goes out of scope, the value is dropped." \
+        --category "Programming" \
+        --tags "rust,memory,ownership"
+    cargo run --release --bin converge-knowledge -- add \
+        --title "Vector Databases" \
+        --content "Vector databases store high-dimensional vectors and enable fast similarity search. They use algorithms like HNSW for approximate nearest neighbor search." \
+        --category "Technology" \
+        --tags "database,vectors,ml"
+    cargo run --release --bin converge-knowledge -- add \
+        --title "GNN Learning" \
+        --content "Graph Neural Networks learn node representations by aggregating information from neighbors. They use message passing to update node embeddings iteratively." \
+        --category "Machine Learning" \
+        --tags "gnn,neural-networks,graphs"
+    @echo "Done! Try: just search 'rust memory'"
+
+# Demo: run sample searches
+demo-search:
+    @echo "Running sample searches..."
+    @echo ""
+    @echo "=== Search: rust memory ==="
+    cargo run --release --bin converge-knowledge -- search "rust memory" --limit 3
+    @echo ""
+    @echo "=== Search: machine learning ==="
+    cargo run --release --bin converge-knowledge -- search "machine learning" --limit 3

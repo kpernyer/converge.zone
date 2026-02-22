@@ -1,0 +1,108 @@
+[package]
+name = "converge-knowledge"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+license = "MIT"
+description = "A self-learning knowledgebase with vector search, gRPC, and MCP interfaces"
+repository = "https://github.com/converge-zone/converge-knowledge"
+keywords = ["vector-database", "knowledge-base", "machine-learning", "embeddings", "grpc", "mcp"]
+categories = ["database", "science"]
+
+[dependencies]
+# Async runtime
+tokio = { version = "1.43", features = ["full"] }
+tokio-stream = "0.1"
+
+# gRPC / Protobuf
+tonic = "0.12"
+prost = "0.13"
+prost-types = "0.13"
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+serde_yaml = "0.9"
+bincode = "1.3"
+
+# Markdown parsing
+pulldown-cmark = "0.12"
+
+# Error handling
+thiserror = "2.0"
+anyhow = "1.0"
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
+
+# Utilities
+uuid = { version = "1.11", features = ["v4", "serde"] }
+chrono = { version = "0.4", features = ["serde"] }
+parking_lot = "0.12"
+dashmap = "6.1"
+async-trait = "0.1"
+
+# Math operations
+rand = "0.8"
+
+# HTTP client for OpenAI embeddings
+reqwest = { version = "0.12", features = ["json"] }
+
+# PDF text extraction
+pdf-extract = "0.7"
+
+# Pattern matching for routing
+regex = "1.11"
+
+# HTTP for MCP
+axum = { version = "0.8", optional = true }
+tower = { version = "0.5", optional = true }
+tower-http = { version = "0.6", features = ["cors", "trace"], optional = true }
+hyper = { version = "1.5", optional = true }
+
+# CLI
+clap = { version = "4.5", features = ["derive"], optional = true }
+
+[dev-dependencies]
+criterion = "0.5"
+tempfile = "3.14"
+tokio-test = "0.4"
+
+[build-dependencies]
+tonic-build = "0.12"
+
+[features]
+default = ["cli", "grpc", "mcp"]
+cli = ["clap"]
+grpc = []
+mcp = ["axum", "tower", "tower-http", "hyper"]
+memory-only = []
+
+[[bin]]
+name = "converge-knowledge"
+path = "src/main.rs"
+required-features = ["cli"]
+
+[[bin]]
+name = "converge-knowledge-server"
+path = "src/bin/server.rs"
+required-features = ["grpc"]
+
+[[bin]]
+name = "converge-knowledge-mcp"
+path = "src/bin/mcp_server.rs"
+required-features = ["mcp"]
+
+[[bench]]
+name = "vector_search"
+harness = false
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+strip = true
+
+[lints.rust]
+unsafe_code = "forbid"
