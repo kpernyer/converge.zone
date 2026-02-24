@@ -2,10 +2,58 @@
 //!
 //! This module implements adaptive learning mechanisms inspired by Graph Neural Networks
 //! to improve search results over time based on user interactions.
+//!
+//! # Components
+//!
+//! - **LearningEngine**: Core learning with GNN message passing
+//! - **FeedbackCollector**: Implicit signal capture from user interactions
+//! - **BatchScheduler**: Background jobs for pattern detection and enrichment
+//! - **InsightStore**: Storage for discovered patterns and relationships
+//!
+//! # Learning Flow
+//!
+//! ```text
+//! User Interactions
+//!        │
+//!        ▼
+//! ┌─────────────────┐
+//! │FeedbackCollector│ ──► Implicit signals (view, select, dwell)
+//! └────────┬────────┘
+//!          │
+//!          ▼
+//! ┌─────────────────┐
+//! │FeedbackProcessor│ ──► ProcessedFeedback (relevance deltas)
+//! └────────┬────────┘
+//!          │
+//!          ▼
+//! ┌─────────────────┐
+//! │ LearningEngine  │ ──► Update weights, GNN propagation
+//! └────────┬────────┘
+//!          │
+//!          ▼
+//! ┌─────────────────┐
+//! │ BatchScheduler  │ ──► Patterns, gaps, classifications
+//! └────────┬────────┘
+//!          │
+//!          ▼
+//! ┌─────────────────┐
+//! │  InsightStore   │ ──► Published insights for retrieval
+//! └─────────────────┘
+//! ```
 
+pub mod batch;
+pub mod feedback;
 mod gnn;
 mod replay;
 
+pub use batch::{
+    BatchInput, BatchJob, BatchScheduler, EntryMetadata, Insight, InsightStore, JobRun, JobStatus,
+    JobType, KnowledgeClass, RelationshipType, Trend,
+};
+pub use feedback::{
+    FeedbackCollector, FeedbackConfig, FeedbackProcessor, FeedbackSignal, ProcessedFeedback,
+    QueryId, SessionId, SignalType,
+};
 pub use gnn::GnnLayer;
 pub use replay::ReplayBuffer;
 
