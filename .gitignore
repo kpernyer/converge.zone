@@ -1,5 +1,6 @@
 # Build artifacts
 converge-optimization/build/
+converge-knowledge/target/
 
 # Planning artifacts (session-specific)
 .planning/phases/*/

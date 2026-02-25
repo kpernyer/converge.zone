@@ -1,0 +1,6 @@
+/Users/kpernyer/repo/converge.zone/converge-knowledge/target/debug/deps/tracing_serde-c8156784a49a59fc.d: /Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tracing-serde-0.2.0/src/lib.rs /Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tracing-serde-0.2.0/src/fields.rs
+
+/Users/kpernyer/repo/converge.zone/converge-knowledge/target/debug/deps/libtracing_serde-c8156784a49a59fc.rmeta: /Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tracing-serde-0.2.0/src/lib.rs /Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tracing-serde-0.2.0/src/fields.rs
+
+/Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tracing-serde-0.2.0/src/lib.rs:
+/Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tracing-serde-0.2.0/src/fields.rs:

@@ -9,8 +9,9 @@
 use crate::core::KnowledgeEntry;
 use crate::error::{Error, Result};
 use crate::ingest::{
-    ImageOcrRequest, OcrBackend, OcrBlockKind, OcrDocument, OcrTargetKind, SourceKind,
-    SourceProvenance,
+    AppleVisionOcrBackend, AppleVisionOcrConfig, ImageOcrRequest, OcrBackend, OcrBlockKind,
+    OcrDocument, OcrTargetKind, SourceKind, SourceProvenance, TesseractOcrBackend,
+    TesseractOcrConfig,
 };
 use chrono::{DateTime, Utc};
 use serde::{Deserialize, Serialize};
@@ -148,6 +149,48 @@ impl ScreenshotIngester {
     /// Create a screenshot ingester with custom config.
     pub fn with_config(backend: Arc<dyn OcrBackend>, config: ScreenshotIngesterConfig) -> Self {
         Self { backend, config }
+    }
+
+    /// Create a screenshot ingester backed by the real Tesseract OCR backend.
+    pub fn with_tesseract() -> Self {
+        Self::new(Arc::new(TesseractOcrBackend::new()))
+    }
+
+    /// Create a screenshot ingester backed by Tesseract with custom OCR config.
+    pub fn with_tesseract_config(ocr_config: TesseractOcrConfig) -> Self {
+        Self::new(Arc::new(TesseractOcrBackend::with_config(ocr_config)))
+    }
+
+    /// Create a screenshot ingester with custom ingestion + Tesseract OCR configs.
+    pub fn with_tesseract_and_config(
+        ocr_config: TesseractOcrConfig,
+        config: ScreenshotIngesterConfig,
+    ) -> Self {
+        Self::with_config(
+            Arc::new(TesseractOcrBackend::with_config(ocr_config)),
+            config,
+        )
+    }
+
+    /// Create a screenshot ingester backed by Apple's Vision OCR (macOS-only at runtime).
+    pub fn with_apple_vision() -> Self {
+        Self::new(Arc::new(AppleVisionOcrBackend::new()))
+    }
+
+    /// Create a screenshot ingester backed by Apple Vision with custom OCR config.
+    pub fn with_apple_vision_config(ocr_config: AppleVisionOcrConfig) -> Self {
+        Self::new(Arc::new(AppleVisionOcrBackend::with_config(ocr_config)))
+    }
+
+    /// Create a screenshot ingester with custom ingestion + Apple Vision OCR configs.
+    pub fn with_apple_vision_and_config(
+        ocr_config: AppleVisionOcrConfig,
+        config: ScreenshotIngesterConfig,
+    ) -> Self {
+        Self::with_config(
+            Arc::new(AppleVisionOcrBackend::with_config(ocr_config)),
+            config,
+        )
     }
 
     /// Ingest a screenshot image file into structured OCR chunks.

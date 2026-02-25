@@ -1,0 +1,14 @@
+/Users/kpernyer/repo/converge.zone/converge-knowledge/target/release/deps/thiserror-397a6c475e5d1cc6.d: /Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/lib.rs /Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/aserror.rs /Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/display.rs /Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/var.rs /Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/private.rs /Users/kpernyer/repo/converge.zone/converge-knowledge/target/release/build/thiserror-29286ef41d5d7379/out/private.rs
+
+/Users/kpernyer/repo/converge.zone/converge-knowledge/target/release/deps/libthiserror-397a6c475e5d1cc6.rlib: /Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/lib.rs /Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/aserror.rs /Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/display.rs /Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/var.rs /Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/private.rs /Users/kpernyer/repo/converge.zone/converge-knowledge/target/release/build/thiserror-29286ef41d5d7379/out/private.rs
+
+/Users/kpernyer/repo/converge.zone/converge-knowledge/target/release/deps/libthiserror-397a6c475e5d1cc6.rmeta: /Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/lib.rs /Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/aserror.rs /Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/display.rs /Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/var.rs /Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/private.rs /Users/kpernyer/repo/converge.zone/converge-knowledge/target/release/build/thiserror-29286ef41d5d7379/out/private.rs
+
+/Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/lib.rs:
+/Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/aserror.rs:
+/Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/display.rs:
+/Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/var.rs:
+/Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/private.rs:
+/Users/kpernyer/repo/converge.zone/converge-knowledge/target/release/build/thiserror-29286ef41d5d7379/out/private.rs:
+
+# env-dep:OUT_DIR=/Users/kpernyer/repo/converge.zone/converge-knowledge/target/release/build/thiserror-29286ef41d5d7379/out

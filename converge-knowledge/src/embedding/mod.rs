@@ -79,9 +79,7 @@ impl EmbeddingEngine {
                 provider: Box::new(provider),
             },
             Err(_) => {
-                tracing::warn!(
-                    "OPENAI_API_KEY not set, falling back to hash embeddings"
-                );
+                tracing::warn!("OPENAI_API_KEY not set, falling back to hash embeddings");
                 Self::new(1536) // Match OpenAI default dimensions
             }
         }

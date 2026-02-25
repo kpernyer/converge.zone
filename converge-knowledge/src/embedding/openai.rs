@@ -27,8 +27,8 @@ use super::EmbeddingProvider;
 use crate::error::{Error, Result};
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
-use std::sync::atomic::{AtomicU64, Ordering};
 use std::sync::Arc;
+use std::sync::atomic::{AtomicU64, Ordering};
 use std::time::{Duration, Instant};
 use tokio::sync::{RwLock, Semaphore};
 use tracing::{debug, warn};
@@ -354,9 +354,11 @@ impl OpenAIEmbedding {
             }
 
             // Acquire semaphore permit for rate limiting
-            let _permit = self.semaphore.acquire().await.map_err(|_| {
-                Error::embedding("Semaphore closed")
-            })?;
+            let _permit = self
+                .semaphore
+                .acquire()
+                .await
+                .map_err(|_| Error::embedding("Semaphore closed"))?;
 
             self.stats.requests.fetch_add(1, Ordering::Relaxed);
 
@@ -485,9 +487,7 @@ impl OpenAIEmbedding {
             .into_iter()
             .enumerate()
             .map(|(i, opt)| {
-                opt.ok_or_else(|| {
-                    Error::embedding(format!("Missing embedding for index {}", i))
-                })
+                opt.ok_or_else(|| Error::embedding(format!("Missing embedding for index {}", i)))
             })
             .collect()
     }
@@ -575,14 +575,8 @@ mod tests {
 
     #[test]
     fn test_model_properties() {
-        assert_eq!(
-            OpenAIModel::TextEmbedding3Small.default_dimensions(),
-            1536
-        );
-        assert_eq!(
-            OpenAIModel::TextEmbedding3Large.default_dimensions(),
-            3072
-        );
+        assert_eq!(OpenAIModel::TextEmbedding3Small.default_dimensions(), 1536);
+        assert_eq!(OpenAIModel::TextEmbedding3Large.default_dimensions(), 3072);
         assert!(OpenAIModel::TextEmbedding3Small.supports_custom_dimensions());
         assert!(!OpenAIModel::TextEmbeddingAda002.supports_custom_dimensions());
     }
@@ -601,22 +595,19 @@ mod tests {
         let provider = OpenAIEmbedding::new("test-key", None);
         assert_eq!(provider.dimensions(), 1536);
 
-        let provider =
-            OpenAIEmbedding::new("test-key", Some("text-embedding-3-large".to_string()));
+        let provider = OpenAIEmbedding::new("test-key", Some("text-embedding-3-large".to_string()));
         assert_eq!(provider.dimensions(), 3072);
     }
 
     #[test]
     fn test_custom_dimensions() {
-        let provider =
-            OpenAIEmbedding::new("test-key", Some("text-embedding-3-small".to_string()))
-                .with_dimensions(512);
+        let provider = OpenAIEmbedding::new("test-key", Some("text-embedding-3-small".to_string()))
+            .with_dimensions(512);
         assert_eq!(provider.dimensions(), 512);
 
         // Ada doesn't support custom dimensions
-        let provider =
-            OpenAIEmbedding::new("test-key", Some("text-embedding-ada-002".to_string()))
-                .with_dimensions(512);
+        let provider = OpenAIEmbedding::new("test-key", Some("text-embedding-ada-002".to_string()))
+            .with_dimensions(512);
         assert_eq!(provider.dimensions(), 1536); // Unchanged
     }
 

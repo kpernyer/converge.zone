@@ -1,0 +1,12 @@
+/Users/kpernyer/repo/converge.zone/converge-knowledge/target/debug/deps/pom-30bcf47823613393.d: /Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pom-1.1.0/src/lib.rs /Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pom-1.1.0/src/input.rs /Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pom-1.1.0/src/result.rs /Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pom-1.1.0/src/train.rs /Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pom-1.1.0/src/range.rs /Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pom-1.1.0/src/set.rs /Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pom-1.1.0/src/parser.rs /Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pom-1.1.0/src/char_class.rs
+
+/Users/kpernyer/repo/converge.zone/converge-knowledge/target/debug/deps/libpom-30bcf47823613393.rmeta: /Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pom-1.1.0/src/lib.rs /Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pom-1.1.0/src/input.rs /Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pom-1.1.0/src/result.rs /Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pom-1.1.0/src/train.rs /Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pom-1.1.0/src/range.rs /Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pom-1.1.0/src/set.rs /Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pom-1.1.0/src/parser.rs /Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pom-1.1.0/src/char_class.rs
+
+/Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pom-1.1.0/src/lib.rs:
+/Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pom-1.1.0/src/input.rs:
+/Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pom-1.1.0/src/result.rs:
+/Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pom-1.1.0/src/train.rs:
+/Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pom-1.1.0/src/range.rs:
+/Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pom-1.1.0/src/set.rs:
+/Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pom-1.1.0/src/parser.rs:
+/Users/kpernyer/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pom-1.1.0/src/char_class.rs:

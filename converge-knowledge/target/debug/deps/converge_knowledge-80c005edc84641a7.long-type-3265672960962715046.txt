@@ -1,0 +1,2 @@
+fn(axum::extract::State<std::sync::Arc<McpHandler>>, Json<types::JsonRpcRequest>) -> impl std::future::Future<Output = impl IntoResponse> {handle_mcp}
+fn(axum::extract::State<std::sync::Arc<McpHandler>>, Json<types::JsonRpcRequest>) -> impl std::future::Future<Output = impl IntoResponse> {handle_mcp}: Handler<_, _>

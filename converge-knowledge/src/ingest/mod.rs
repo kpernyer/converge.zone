@@ -63,8 +63,9 @@ mod source;
 pub use markdown::{ChunkType, IngesterConfig, MarkdownChunk, MarkdownDocument, MarkdownIngester};
 pub use multimodal::{EmbeddingDescriptor, EmbeddingLocation, Modality, TemporalSpan};
 pub use ocr::{
-    BoundingBox, FixtureOcrBackend, ImageOcrRequest, OcrBackend, OcrBlockKind, OcrDocument,
-    OcrEngine, OcrTargetKind, OcrTextBlock,
+    AppleVisionOcrBackend, AppleVisionOcrConfig, AppleVisionRecognitionLevel, BoundingBox,
+    FixtureOcrBackend, ImageOcrRequest, OcrBackend, OcrBlockKind, OcrDocument, OcrEngine,
+    OcrTargetKind, OcrTextBlock, TesseractOcrBackend, TesseractOcrConfig,
 };
 pub use pdf::{PdfChunk, PdfDocument, PdfIngester};
 pub use photos::{PhotoDocument, PhotoIngester, PhotoIngesterConfig, PhotoTextChunk};
