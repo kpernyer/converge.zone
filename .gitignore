@@ -1,18 +1,12 @@
-# Build artifacts
-converge-optimization/build/
-converge-knowledge/target/
+# Sub-repos (independent git repositories)
+converge-*/
 
-# Planning artifacts (session-specific)
-.planning/phases/*/
+# Planning and tracking
+.planning/
+.beads/
 
 # Governance artifacts (local findings, acks, etc.)
 .converge/
 
-# Beads tracking
-.beads/
-
 # OS files
 .DS_Store
-converge-knowledge/
-converge-policy/
-converge-domain/
