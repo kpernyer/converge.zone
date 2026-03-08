@@ -118,43 +118,88 @@ Supervisor                    converge-policy                Agent
 - Non-transferable — bound to subject
 - Auditable — delegation + usage recorded in ledger
 
+## Current State: Dual Cedar Engines
+
+converge-personas and converge-policy each embed their own Cedar engine. This is
+intentional for now — both repos are independently developing their policy models.
+The consolidation below is the target, not the current state.
+
+### converge-personas (Cedar 4.8.2)
+
+The `strategic/validator/` directory contains a full Cedar-based governance
+validator with:
+- `cedar/policies/foundation.cedar` — core team full access, extended team
+  gate evaluation with evidence, self-approval forbid
+- `cedar/policies/authority-rules.cedar` — elevated approver permits,
+  high-risk gate restriction (forbid overrides permit)
+- `cedar/schema.cedarschema` — formal schema with User, Team, Gate, Override
+  entity types and EvaluateGate, ApproveGate, CreateOverride, ApproveOverride
+  actions
+- `cedar/entities.json` — 24 personas mapped to Core/Extended teams with
+  authority tiers and 6 gates with risk classifications
+- `src/policy_engine.rs` — embedded Cedar evaluator with structured
+  AuthorityViolation diagnostics
+
+The validator also handles non-Cedar concerns that stay here regardless:
+drift detection, git fingerprinting, audit trails, Slack/email alerts,
+SLA breach detection, weekly digests, escalation routing, metrics.
+
+### converge-policy (Cedar 2.4)
+
+The `rust-pdp-cedar/` directory is a modular library + HTTP service:
+- `src/engine.rs` — Cedar policy evaluation with entity mapping
+- `src/delegation.rs` — Ed25519-signed CBOR delegation tokens
+- `src/decision.rs` — PolicyOutcome (Promote/Reject/Escalate)
+- `src/types.rs` — PrincipalIn, ResourceIn, ContextIn domain types
+- `src/main.rs` — thin Axum HTTP shell
+- `policies/policy.cedar` — flow authority rules (propose, validate, promote,
+  commit, advance_phase) with authority-level ABAC
+
+Also provides an OPA/Rego equivalent at `opa/policy.rego`.
+
+### What Overlaps
+
+Both implement Cedar-based ABAC authorization with authority levels. The entity
+models are different but describe the same domain:
+
+| Concern | converge-personas | converge-policy |
+|---------|-------------------|-----------------|
+| Principal | User (persona with authority tier) | Agent::Persona (with authority string) |
+| Resource | Gate (with risk class) | Flow::Commitment (with phase, gates) |
+| Authority | Blocking-by-Policy / Escalating / Advisory | advisory / participatory / supervisory / sovereign |
+| Cedar version | 4.8.2 (external schema, validation) | 2.4 (inline) |
+
+### What Does NOT Overlap
+
+converge-personas' non-Cedar validator functions (drift detection, fingerprinting,
+digests, alerts, SLA, routing) have no equivalent in converge-policy and are not
+part of the consolidation scope.
+
 ## Consolidation Plan
-
-converge-personas currently embeds its own Cedar engine (cedar-policy 4.8.2)
-for gate authorization. This should be consolidated into converge-policy.
-
-### Current State (Dual Cedar)
-
-```
-converge-personas/strategic/validator/
-  cedar/policies/foundation.cedar        ← gate authorization rules
-  cedar/policies/authority-rules.cedar   ← team-based restrictions
-  cedar/schema.cedarschema               ← formal schema
-  src/policy_engine.rs                   ← embedded Cedar evaluator
-
-converge-policy/rust-pdp-cedar/
-  policies/policy.cedar                  ← flow authorization rules
-  src/main.rs                            ← Cedar + HTTP service
-```
 
 ### Target State (Single PDP)
 
 ```
 converge-policy/
   policies/
-    flow-authority.cedar                 ← agent actions on flows
-    gate-authority.cedar                 ← persona approvals on gates
+    flow-authority.cedar                 ← agent actions on flows (from current policy.cedar)
+    gate-authority.cedar                 ← persona approvals on gates (from personas)
     delegation.cedar                     ← delegation constraints
   schema/
-    converge.cedarschema                 ← unified schema (v4.8.2)
+    converge.cedarschema                 ← unified schema (upgraded to v4.8.2)
   src/
-    main.rs                              ← single HTTP service
+    engine.rs                            ← single Cedar evaluator (both flows and gates)
+    delegation.rs                        ← unchanged
+    decision.rs                          ← extended with gate outcomes
+    types.rs                             ← extended with gate request types
+    main.rs                              ← HTTP service with gate endpoints
 
 converge-personas/
   personas/                              ← unchanged: role definitions
   evals/                                 ← unchanged: eval prompts
   entities.json                          ← consumed by converge-policy
-  (no more Cedar engine)
+  strategic/validator/                   ← keeps non-Cedar functions
+    src/policy_engine.rs                 ← replaced with HTTP calls to converge-policy
 ```
 
 ### Migration Steps
@@ -163,7 +208,7 @@ converge-personas/
 2. **Port gate policies** — move foundation.cedar and authority-rules.cedar into converge-policy
 3. **Unify entity model** — merge Agent::Persona (flows) and User/Team/Gate (personas) into one schema
 4. **Add gate endpoints** — extend `/decide` to handle gate evaluation requests
-5. **Remove embedded Cedar from converge-personas** — validator calls converge-policy HTTP API instead
+5. **Replace embedded Cedar in converge-personas** — validator's policy_engine.rs calls converge-policy HTTP API instead of evaluating locally
 6. **Add delegation-for-gates** — allow temporary gate approval elevation via delegation tokens
 
 ### Unified Authority Model

@@ -49,10 +49,16 @@ converge-ledger (personas appear in audit)
 | `schemas/` | JSON Schema for gate execution, escalation packets |
 | `entities.json` | Cedar entity data consumed by converge-policy |
 
-## What It Does NOT Contain
+## What It Also Contains (Consolidation Pending)
 
-Policy evaluation. converge-personas defines *who* agents are; converge-policy
-decides *what they can do*. There is no embedded Cedar engine here.
+The `strategic/validator/` directory currently embeds a Cedar 4.8.2 policy
+engine for gate authorization, plus non-Cedar governance functions (drift
+detection, git fingerprinting, Slack/email alerts, SLA checks, weekly digests).
+
+The Cedar engine is a consolidation target — it will move to converge-policy
+as the single PDP. The non-Cedar validator functions stay here.
+
+See [Governance Architecture](../GOVERNANCE_ARCHITECTURE.md) for details.
 
 ## Key Concepts
 
