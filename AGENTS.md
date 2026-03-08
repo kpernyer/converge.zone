@@ -82,3 +82,8 @@ Prefer durable artifacts (tracked docs, task comments, reports) over chat-only c
 - NEVER stop before pushing - that leaves work stranded locally
 - NEVER say "ready to push when you are" - YOU must push
 - If push fails, resolve and retry until it succeeds
+
+## Version Control
+
+- Use `jj` for day-to-day operations (commits, branches, status, log)
+- Fall back to `git` only when `jj` cannot handle it (e.g. specific remote operations)
