@@ -1,28 +1,36 @@
 # converge-personas
 
-**AI Persona Definitions**
+**Agent Identity & Governance Roles**
 
 ## Purpose
 
-converge-personas defines the identity, constraints, and behavioral boundaries for AI agents within Converge. Personas are not "personalities"—they are governance configurations that specify what an agent is authorized to do, how it should frame its outputs, and what constraints bind its behavior.
+converge-personas defines the identity, constraints, and behavioral boundaries
+for AI agents within Converge. Personas are governance configurations that
+specify what an agent is authorized to do, how it should frame its outputs, and
+what constraints bind its behavior.
+
+See [Governance Architecture](../GOVERNANCE_ARCHITECTURE.md) for how this fits
+with converge-policy and converge-ledger.
 
 ## Why It Matters
 
-"AI agent" is dangerously vague. An agent without bounds is a liability. Personas make agent behavior:
+"AI agent" is dangerously vague. An agent without bounds is a liability. Personas
+make agent behavior:
 
 - **Bounded**: What domains can this agent operate in?
 - **Authorized**: What actions require escalation?
 - **Consistent**: How does this agent frame uncertainty?
 - **Auditable**: What identity appears in the audit trail?
 
-Personas turn "the AI said" into "the Strategic Analyst agent, operating under Policy v2.3, with Advisory authority, said."
+Personas turn "the AI said" into "the Strategic Analyst agent, operating under
+Policy v2.3, with Advisory authority, said."
 
 ## Place in the Platform
 
-converge-personas provides configuration for agents across the platform:
-
 ```
-converge-personas  ←── Persona definitions (YAML + Rust)
+converge-personas  ←── Persona definitions + entity data
+    ↓
+converge-policy (entities.json → Cedar PDP evaluation)
     ↓
 converge-domain (agents adopt personas)
     ↓
@@ -31,53 +39,50 @@ converge-llm (personas shape prompts)
 converge-ledger (personas appear in audit)
 ```
 
-When a StrategicInsightAgent runs, it doesn't just "use Claude." It operates as a defined persona with explicit constraints.
+## What It Contains
+
+| Directory | Purpose |
+|-----------|---------|
+| `personas/` | 24 role profiles with audit prompts |
+| `evals/` | Lightweight validation prompts for Claude |
+| `contracts/` | Phase responsibility contracts (RACI) |
+| `schemas/` | JSON Schema for gate execution, escalation packets |
+| `entities.json` | Cedar entity data consumed by converge-policy |
+
+## What It Does NOT Contain
+
+Policy evaluation. converge-personas defines *who* agents are; converge-policy
+decides *what they can do*. There is no embedded Cedar engine here.
 
 ## Key Concepts
 
-### Persona Components
+### Authority Tiers
 
-| Component | Purpose |
-|-----------|---------|
-| Identity | Name, role, domain expertise |
-| Authority | Advisory, Supervisory, Participatory, Sovereign |
-| Constraints | What topics are off-limits |
-| Framing | How to express uncertainty, dissent |
-| Policy Binding | Which policy version applies |
+| Tier | Meaning | Team |
+|------|---------|------|
+| Blocking-by-Policy | Can unilaterally block promotion | Core (6) |
+| Escalating | Can escalate to block | Extended |
+| Advisory | Can suggest, cannot block | Extended |
 
-### Authority Levels
+### Core Team (6 personas)
 
-| Level | Meaning |
-|-------|---------|
-| Advisory | Can suggest, cannot commit |
-| Supervisory | Can approve within bounds |
-| Participatory | Part of human decision process |
-| Sovereign | Full autonomous authority (rare) |
+System Architect, QA Engineer, Security Auditor, Founder, Legal Counsel,
+Ethics & Safety Officer.
 
-### Example Persona
+### Eval Suites
 
-```yaml
-persona: strategic_analyst
-identity:
-  role: "Strategic Analyst"
-  domain: ["market_analysis", "competitive_intelligence"]
-authority: advisory
-constraints:
-  - "No pricing recommendations without human review"
-  - "Flag uncertainty above 30%"
-framing:
-  uncertainty: "explicit_confidence_intervals"
-  dissent: "structured_counterargument"
-policy: "enterprise_v2.3"
-```
+| Suite | When | Blocking? |
+|-------|------|-----------|
+| pr-merge | Before PR merge | Medium risk |
+| release-candidate | Before RC tag | High risk |
+| release-critical | Release approval | Blocking |
+| deploy | Before production | High risk |
 
 ## Governance Alignment
 
 Personas implement **human roles as authority semantics**:
 
 - Agents don't freelance; they operate within defined roles
-- Authority levels determine what gates require human approval
-- Constraints are enforced, not suggested
-- Audit trails include persona identity
-
-This is how Converge answers "who can authorize this commitment?"—not with a user checkbox, but with institutional role design.
+- Authority tiers map to converge-policy's Cedar rules
+- Constraints are enforced at the PDP, not suggested
+- Audit trails include persona identity via converge-ledger
