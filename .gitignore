@@ -13,3 +13,5 @@ converge-knowledge/target/
 
 # OS files
 .DS_Store
+converge-knowledge/
+converge-policy/
